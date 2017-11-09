@@ -6,6 +6,8 @@
 # Cesar A. Saavedra Vanegas
 
 #--------------- Punto 1 ---------------#
+
+#----------Para n=10----------#
 e <- 5000
 n <- 10
 mu <- 5
@@ -16,16 +18,16 @@ muestras <- replicate(e,rnorm(n,mu,sd))
 
 
 intervalo <- function(columna) {
-m <- muestras[ , columna]
-sem <- sd(m)/sqrt(length(m))
-lim.inf <- mean(m) - cuantil * sqrt(sd)/sqrt(n)
-lim.sup <- mean(m) + cuantil * sqrt(sd)/sqrt(n)
-
-c(lim.inf,lim.sup)
-
+  m <- muestras[ , columna]
+  sem <- sd(m)/sqrt(length(m))
+  lim.inf <- mean(m) - cuantil * sqrt(sd)/sqrt(n)
+  lim.sup <- mean(m) + cuantil * sqrt(sd)/sqrt(n)
+  
+  c(lim.inf,lim.sup)
+  
 }
 
-mis.intervalos <- matrix(rep(0:5001),nrow=2)
+mis.intervalos <- matrix(rep(1:5000),nrow=2)
 
 for(i in 1:5000) {
   mis.intervalos[,i] <- intervalo(i)
@@ -33,7 +35,7 @@ for(i in 1:5000) {
 
 mis.intervalos[ ,1:30]
 
-plot(1:10, type = "n",
+plot(1:10, type = "n", main="Intervalo de confianza para una poblacion Normal(5,1) con n=10",
      xlim = range(mis.intervalos),
      ylab = "Muestreos")
 
@@ -42,16 +44,11 @@ for(i in 1:5000) {
   segments(mis.intervalos[1,i], i, mis.intervalos[2,i], i)
 }
 
-#mu1 <- muestras[ ,1:30]
-#mu2 <- muestras[ ,1:50]
-#mu3 <- muestras[ , 1:100]
+#----------Para n=30----------#
 
-#lim_inf <- media - cuantil * sqrt(varianza)/sqrt(n)
-#lim_sup <- media + cuantil * sqrt(varianza)/sqrt(n)
+#----------Para n=50----------#
 
-#para30 <- muchasnormales[1:30]
-#para50 <- muchasnormales[1:50]
-#para100 <- muchasnormales[1:100]
+#----------Para n=100----------#
 
 
 #--------------- Punto 4 ---------------#
@@ -59,7 +56,7 @@ for(i in 1:5000) {
 
 
 #--------------- Punto 7 ---------------#
-
+x11()
 #---------------------------------------#
 
 
