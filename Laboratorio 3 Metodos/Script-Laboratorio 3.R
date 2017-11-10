@@ -48,9 +48,14 @@ abline(v = mu, lty = 2, col=("red"))
 
 for(i in 1:5000) {
   segments(mis.intervalos[1,i], i, mis.intervalos[2,i], i,
-           col = ifelse(mis.intervalos[1, i] < mu & mis.intervalos[2, i] > mu,
-                        "gray", "blue"))
+           col = ifelse(mis.intervalos[1, i] < mu & mis.intervalos[2, i] > mu, "gray", "blue"))  
+  #if (mis.intervalos < calcula.el.intervalo()[i] && mis.intervalos > calcula.el.intervalo()[i]) {
+      #contador = contador + 1 }
+  #else {contador = contador}
 }
+
+hist(muestras)
+
 
 #---Para n=30---#
 
