@@ -7,196 +7,222 @@
 
 #--------------- Punto 1 ---------------#
 
-#---Para n=10---#
-
 B <- 5000 ## número de experimentos
-n <- 10 ## tamaño de muestra
 mu <- 5
 sd <- 1
 alpha <- 0.05
 cuantil <- qnorm(1-alpha/2)
 
-muestras <- replicate(B, rnorm(n, mu, sd))
+#---Para n=10---#
+n1 <- 10 ## tamaño de muestra
 
-calcula.el.intervalo <- function(columna) {
+muestras1 <- replicate(B, rnorm(n1, mu, sd))
+
+calcula.el.intervalo1 <- function(columna) {
   
-  m <- muestras[, columna]
+  m1 <- muestras1[, columna]
   
-  sem <- sd(m)/sqrt(length(m))
+  sem1 <- sd(m1)/sqrt(length(m1))
   
-  lim.inf <- mean(m) - cuantil * sqrt(sd)/sqrt(n)
-  lim.sup <- mean(m) + cuantil * sqrt(sd)/sqrt(n)
+  lim.inf1 <- mean(m1) - cuantil * sqrt(sd)/sqrt(n1)
+  lim.sup1 <- mean(m1) + cuantil * sqrt(sd)/sqrt(n1)
   
-  c(lim.inf, lim.sup)
+  c(lim.inf1, lim.sup1)
 }
 
-#---Cálculo de los nuevos intervalos---#
-c=0
-mis.intervalos <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
+#Cálculo de los nuevos intervalos#
+c1=0
+mis.intervalos1 <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
 
 for(i in 1:5000) {
-  mis.intervalos[,i] <- calcula.el.intervalo(i)
-  if (mis.intervalos[1, i] <= mu && mis.intervalos[2, i] >= mu){
-    c= c+1
+  mis.intervalos1[,i] <- calcula.el.intervalo1(i)
+  if (mis.intervalos1[1, i] <= mu && mis.intervalos1[2, i] >= mu){
+    c1= c1+1
   }
   else{
-    c=c
+    c1=c1
   }
 }
 
-Porcentaje <- c/5000 #Proporcion de intervalos que atrapan al parametro
+Porcentaje1 <- c1/5000 #Proporcion de intervalos que atrapan al parametro
 
-#---Gráfico---#
+longitud1 <- numeric(length = B)
+for (i in 1:B){
+  longitud1[i]=(mis.intervalos1[2,i]-mis.intervalos1[1,i])
+  longitudpro1=sum(longitud1)/B
+}
+
+#---Para n=30---#
+n2 <- 30 ## tamaño de muestra
+
+muestras2 <- replicate(B, rnorm(n2, mu, sd))
+
+calcula.el.intervalo2 <- function(columna) {
+  
+  m2 <- muestras2[, columna]
+  
+  sem <- sd(m2)/sqrt(length(m2))
+  
+  lim.inf2 <- mean(m2) - cuantil * sqrt(sd)/sqrt(n2)
+  lim.sup2 <- mean(m2) + cuantil * sqrt(sd)/sqrt(n2)
+  
+  c(lim.inf2, lim.sup2)
+}
+
+#Cálculo de los nuevos intervalos#
+c2=0
+mis.intervalos2 <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
+
+for(i in 1:5000) {
+  mis.intervalos2[,i] <- calcula.el.intervalo2(i)
+  if (mis.intervalos2[1, i] <= mu && mis.intervalos2[2, i] >= mu){
+    c2= c2+1
+  }
+  else{
+    c2=c2
+  }
+}
+
+Porcentaje2 <- c2/5000 #Proporcion de intervalos que atrapan al parametro
+
+longitud2 <- numeric(length = B)
+for (i in 1:B){
+  longitud2[i]=(mis.intervalos2[2,i]-mis.intervalos2[1,i])
+  longitudpro2=sum(longitud2)/B
+}
+
+#---Para n=50---#
+n3 <- 50 ## tamaño de muestra
+
+muestras3 <- replicate(B, rnorm(n3, mu, sd))
+
+calcula.el.intervalo3 <- function(columna) {
+  
+  m3 <- muestras3[, columna]
+  
+  sem <- sd(m3)/sqrt(length(m3))
+  
+  lim.inf3 <- mean(m3) - cuantil * sqrt(sd)/sqrt(n3)
+  lim.sup3 <- mean(m3) + cuantil * sqrt(sd)/sqrt(n3)
+  
+  c(lim.inf3, lim.sup3)
+}
+
+#Cálculo de los nuevos intervalos#
+c3=0
+mis.intervalos3 <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
+
+for(i in 1:5000) {
+  mis.intervalos3[,i] <- calcula.el.intervalo3(i)
+  if (mis.intervalos3[1, i] <= mu && mis.intervalos3[2, i] >= mu){
+    c3= c3+1
+  }
+  else{
+    c3=c3
+  }
+}
+
+Porcentaje3 <- c3/5000 #Proporcion de intervalos que atrapan al parametro
+
+longitud3 <- numeric(length = B)
+for (i in 1:B){
+  longitud3[i]=(mis.intervalos3[2,i]-mis.intervalos3[1,i])
+  longitudpro3=sum(longitud3)/B
+}
+
+#---Para n=100---#
+
+n4 <- 100 ## tamaño de muestra
+
+muestras4 <- replicate(B, rnorm(n4, mu, sd))
+
+calcula.el.intervalo4 <- function(columna) {
+  
+  m4 <- muestras4[, columna]
+  
+  sem <- sd(m4)/sqrt(length(m4))
+  
+  lim.inf4 <- mean(m4) - cuantil * sqrt(sd)/sqrt(n4)
+  lim.sup4 <- mean(m4) + cuantil * sqrt(sd)/sqrt(n4)
+  
+  c(lim.inf4, lim.sup4)
+}
+
+#Cálculo de los nuevos intervalos#
+c4=0
+mis.intervalos4 <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
+
+for(i in 1:5000) {
+  mis.intervalos4[,i] <- calcula.el.intervalo4(i)
+  if (mis.intervalos4[1, i] <= mu && mis.intervalos4[2, i] >= mu){
+    c4= c4+1
+  }
+  else{
+    c4=c4
+  }
+}
+
+Porcentaje4 <- c4/5000 #Proporcion de intervalos que atrapan al parametro
+
+longitud4 <- numeric(length = B)
+for (i in 1:B){
+  longitud4[i]=(mis.intervalos4[2,i]-mis.intervalos4[1,i])
+  longitudpro4=sum(longitud4)/B
+}
+
+### Graficos ###
+par(mfrow=c(2,2))
 plot(1:100, type = "n",
-     xlim = range(mis.intervalos), main = "Intervalo de confianza Distribucion Normal",
+     xlim = range(mis.intervalos1), main = "Intervalo de confianza Distribucion Normal con n=10",
      ylab = "Muestreos", xlab = "Intervalo")
 
 abline(v = mu, lty = 2, col=("black"))
 
 for(i in 1:100) {
-  segments(mis.intervalos[1,i], i, mis.intervalos[2,i], i,
-           col = ifelse(mis.intervalos[1, i] < mu & mis.intervalos[2, i] > mu, "gray", "red"))  
+  segments(mis.intervalos1[1,i], i, mis.intervalos1[2,i], i,
+           col = ifelse(mis.intervalos1[1, i] < mu & mis.intervalos1[2, i] > mu, "gray", "red"))  
 }
 
-longitud <- numeric(length = B)
+longitud1 <- numeric(length = B)
 for (i in 1:B){
-  longitud[i]=(mis.intervalos[2,i]-mis.intervalos[1,i])
-  longitudpro=sum(longitud)/B
+  longitud1[i]=(mis.intervalos1[2,i]-mis.intervalos1[1,i])
+  longitudpro1=sum(longitud1)/B
 }
 
-#---Para n=30---#
-B <- 5000 ## número de experimentos
-n <- 30 ## tamaño de muestra
-mu <- 5
-sd <- 1
-alpha <- 0.05
-cuantil <- qnorm(1-alpha/2)
+plot(1:100, type = "n",
+     xlim = range(mis.intervalos2), main = "Intervalo de confianza Distribucion Normal con n=30",
+     ylab = "Muestreos", xlab = "Intervalo")
 
-muestras <- replicate(B, rnorm(n, mu, sd))
+abline(v = mu, lty = 2, col=("black"))
 
-calcula.el.intervalo <- function(columna) {
-  
-  m <- muestras[, columna]
-  
-  sem <- sd(m)/sqrt(length(m))
-  
-  lim.inf <- mean(m) - cuantil * sqrt(sd)/sqrt(n)
-  lim.sup <- mean(m) + cuantil * sqrt(sd)/sqrt(n)
-  
-  c(lim.inf, lim.sup)
+for(i in 1:100) {
+  segments(mis.intervalos2[1,i], i, mis.intervalos2[2,i], i,
+           col = ifelse(mis.intervalos2[1, i] < mu & mis.intervalos2[2, i] > mu, "gray", "red"))  
 }
 
-#---Cálculo de los nuevos intervalos---#
-c=0
-mis.intervalos <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
+plot(1:100, type = "n",
+     xlim = range(mis.intervalos3), main = "Intervalo de confianza Distribucion Normal con n=50",
+     ylab = "Muestreos", xlab = "Intervalo")
 
-for(i in 1:5000) {
-  mis.intervalos[,i] <- calcula.el.intervalo(i)
-  if (mis.intervalos[1, i] <= mu && mis.intervalos[2, i] >= mu){
-    c= c+1
-  }
-  else{
-    c=c
-  }
+abline(v = mu, lty = 2, col=("black"))
+
+for(i in 1:100) {
+  segments(mis.intervalos3[1,i], i, mis.intervalos3[2,i], i,
+           col = ifelse(mis.intervalos3[1, i] < mu & mis.intervalos3[2, i] > mu, "gray", "red"))  
 }
 
-Porcentaje <- c/5000 #Proporcion de intervalos que atrapan al parametro
+plot(1:100, type = "n",
+     xlim = range(mis.intervalos4), main = "Intervalo de confianza Distribucion Normal con n=100",
+     ylab = "Muestreos", xlab = "Intervalo")
 
-longitud <- numeric(length = B)
-for (i in 1:B){
-  longitud[i]=(mis.intervalos[2,i]-mis.intervalos[1,i])
-  longitudpro=sum(longitud)/B
+abline(v = mu, lty = 2, col=("black"))
+
+for(i in 1:100) {
+  segments(mis.intervalos4[1,i], i, mis.intervalos4[2,i], i,
+           col = ifelse(mis.intervalos4[1, i] < mu & mis.intervalos4[2, i] > mu, "gray", "red"))  
 }
 
-#---Para n=50---#
-
-B <- 5000 ## número de experimentos
-n <- 50 ## tamaño de muestra
-mu <- 5
-sd <- 1
-alpha <- 0.05
-cuantil <- qnorm(1-alpha/2)
-
-muestras <- replicate(B, rnorm(n, mu, sd))
-
-calcula.el.intervalo <- function(columna) {
-  
-  m <- muestras[, columna]
-  
-  sem <- sd(m)/sqrt(length(m))
-  
-  lim.inf <- mean(m) - cuantil * sqrt(sd)/sqrt(n)
-  lim.sup <- mean(m) + cuantil * sqrt(sd)/sqrt(n)
-  
-  c(lim.inf, lim.sup)
-}
-
-#---Cálculo de los nuevos intervalos---#
-c=0
-mis.intervalos <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
-
-for(i in 1:5000) {
-  mis.intervalos[,i] <- calcula.el.intervalo(i)
-  if (mis.intervalos[1, i] <= mu && mis.intervalos[2, i] >= mu){
-    c= c+1
-  }
-  else{
-    c=c
-  }
-}
-
-Porcentaje <- c/5000 #Proporcion de intervalos que atrapan al parametro
-
-longitud <- numeric(length = B)
-for (i in 1:B){
-  longitud[i]=(mis.intervalos[2,i]-mis.intervalos[1,i])
-  longitudpro=sum(longitud)/B
-}
-#---Para n=100---#
-
-B <- 5000 ## número de experimentos
-n <- 100 ## tamaño de muestra
-mu <- 5
-sd <- 1
-alpha <- 0.05
-cuantil <- qnorm(1-alpha/2)
-
-muestras <- replicate(B, rnorm(n, mu, sd))
-
-calcula.el.intervalo <- function(columna) {
-  
-  m <- muestras[, columna]
-  
-  sem <- sd(m)/sqrt(length(m))
-  
-  lim.inf <- mean(m) - cuantil * sqrt(sd)/sqrt(n)
-  lim.sup <- mean(m) + cuantil * sqrt(sd)/sqrt(n)
-  
-  c(lim.inf, lim.sup)
-}
-
-#---Cálculo de los nuevos intervalos---#
-c=0
-mis.intervalos <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
-
-for(i in 1:5000) {
-  mis.intervalos[,i] <- calcula.el.intervalo(i)
-  if (mis.intervalos[1, i] <= mu && mis.intervalos[2, i] >= mu){
-    c= c+1
-  }
-  else{
-    c=c
-  }
-}
-
-Porcentaje <- c/5000 #Proporcion de intervalos que atrapan al parametro
-
-longitud <- numeric(length = B)
-for (i in 1:B){
-  longitud[i]=(mis.intervalos[2,i]-mis.intervalos[1,i])
-  longitudpro=sum(longitud)/B
-}
-
+#-------------------------------------------------------------#
 # Para una Exponencial
 B <- 5000 ## número de experimentos
 n <- 100 ## tamaño de muestra
@@ -444,6 +470,7 @@ for(m in 1:length(n)){
   tabla_cv[m,8]=contador6/nsim
 }
 ####### Graficas ########
+par(mfrow=c(1,2))
 plot(tabla_sd[,2],main="Cobertura de los intervalos para sd
      en la distribucion Normal",col="red",type="o",
      xaxt='n',ylim=c(0,1),pch=5,xlab="Tamaño muestra",
@@ -455,7 +482,6 @@ abline(h=1-alpha,col="green")
 legend(5,0.7,c("alpha","estimador 1","estimador 2","Bootstrap"),
        col=c("green","red","blue","black"),lty=c(1,1),cex=0.8)
 
-
 plot(tabla_sd[,1],main="Longitud de los intervalos para sd
      en la distribucion Normal",col="red",type="o",
      xaxt='n',ylim=c(0,max(tabla_sd[,1])),pch=5,xlab="Tamaño muestra",
@@ -463,9 +489,10 @@ plot(tabla_sd[,1],main="Longitud de los intervalos para sd
 axis(1,1:length(n),n)
 lines(tabla_sd[,3],col="blue",type="o")
 lines(tabla_sd[,5],type="b")
-legend(5,40,c("estimador 1","estimador 2","Bootstrap"),
+legend(5,90,c("estimador 1","estimador 2","Bootstrap"),
        col=c("red","blue","black"),lty=c(1,1),cex=0.8 )
 
+par(mfrow=c(1,2))
 plot(tabla_cv[,2],main="Cobertura de los intervalos para CV
      en la distribucion Normal",col="red",type="o",
      xaxt='n',ylim=c(0,1),pch=5,xlab="Tamaño muestra",
@@ -477,7 +504,6 @@ lines(tabla_cv[,8], col="purple", type="o")
 abline(h=1-alpha,col="green")
 legend(5,0.85,c("alpha","estimador 1","estimador 2","estimador 3","Bootstrap"),
        col=c("green","red","blue","purple","black"),lty=c(1,1),cex=0.8)
-
 
 plot(tabla_cv[,1],main="Longitud de los intervalos para CV
      en la distribucion Normal",col="red",type="o",
@@ -674,7 +700,7 @@ for(m in 1:length(n)){
 }
 
 ####### Graficas ########
-
+par(mfrow=c(1,2))
 plot(tabla_sd[,2],main="Cobertura de los intervalos para sd
      en la distribucion Gamma",col="red",type="o",
      xaxt='n',ylim=c(0.6,1),pch=5,xlab="Tamaño de muestra",
@@ -686,7 +712,6 @@ abline(h=1-alpha,col="green")
 legend(5,0.85,c("alpha","estimador 1","estimador 2","Bootstrap"),
        col=c("green","red","blue","black"),lty=c(1,1),cex=0.8)
 
-
 plot(tabla_sd[,1],main="Longitud de los intervalos para sd
      en la distribucion Gamma",col="red",type="o",
      xaxt='n',ylim=c(0,max(tabla_sd[,1])),pch=5,xlab="Tamaño de muestra",
@@ -697,6 +722,7 @@ lines(tabla_sd[,5],type="b")
 legend(5,15,c("estimador 1","estimador 2","Bootstrap"),
        col=c("red","blue","black"),lty=c(1,1),cex=0.8)
 
+par(mfrow=c(1,2))
 plot(tabla_cv[,2],main="Cobertura de los intervalos para CV
      en la distribucion Gamma",col="red",type="o",
      xaxt='n',ylim=c(0,1),pch=5,xlab="Tamaño de muestra",
@@ -708,7 +734,6 @@ lines(tabla_cv[,8], col="purple", type="o")
 abline(h=1-alpha,col="green")
 legend(5,0.85,c("alpha","estimador 1","estimador 2","estimador 3","Bootstrap"),
        col=c("green","red","blue","purple","black"),lty=c(1,1),cex=0.8)
-
 
 plot(tabla_cv[,1],main="Longitud de los intervalos para CV
      en la distribucion Gamma",col="red",type="o",
@@ -909,6 +934,7 @@ for(m in 1:length(n)){
   tabla_cv[m,8]=contador6/nsim
 }
 ####### Graficas ########
+par(mfrow=c(1,2))
 plot(tabla_sd[,2],main="Cobertura de los intervalos para sd
      en la distribucion uniforme",col="red",type="o",
      xaxt='n',ylim=c(0,1),pch=5,xlab="Tamaño de muestra",
@@ -920,7 +946,6 @@ abline(h=1-alpha,col="green")
 legend(5,0.7,c("alpha","estimador 1","estimador 2","Bootstrap"),
        col=c("green","red","blue","black"),lty=c(1,1),cex=0.8)
 
-
 plot(tabla_sd[,1],main="Longitud de los intervalos para sd
      en la distribucion uniforme",col="red",type="o",
      xaxt='n',ylim=c(0,max(tabla_sd[,1])),pch=5,xlab="Tamaño de muestra",
@@ -928,9 +953,10 @@ plot(tabla_sd[,1],main="Longitud de los intervalos para sd
 axis(1,1:length(n),n)
 lines(tabla_sd[,3],col="blue",type="o")
 lines(tabla_sd[,5],type="b")
-legend(5,250,c("estimador 1","estimador 2","Bootstrap"),
+legend(5,550,c("estimador 1","estimador 2","Bootstrap"),
        col=c("red","blue","black"),lty=c(1,1),cex=0.8 )
 
+par(mfrow=c(1,2))
 plot(tabla_cv[,2],main="Cobertura de los intervalos para CV
      en la distribucion uniforme",col="red",type="o",
      xaxt='n',ylim=c(0,1),pch=5,xlab="Tamaño de muestra",
@@ -940,9 +966,8 @@ lines(tabla_cv[,4],col="blue",type="o")
 lines(tabla_cv[,6],type="b")
 lines(tabla_cv[,8], col="purple", type="o")
 abline(h=1-alpha,col="green")
-legend(5,250,c("alpha""estimador 1","estimador 2","estimador 3","Bootstrap"),
+legend(5,250,c("alpha","estimador 1","estimador 2","estimador 3","Bootstrap"),
        col=c("green","red","blue","purple","black"),lty=c(1,1),cex=0.8)
-
 
 plot(tabla_cv[,1],main="Longitud de los intervalos para CV
      en la distribuciÛn uniforme",col="red",type="o",
