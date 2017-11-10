@@ -31,14 +31,23 @@ calcula.el.intervalo <- function(columna) {
 }
 
 #---Cálculo de los nuevos intervalos---#
-
+c=0
 mis.intervalos <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
 
 for(i in 1:5000) {
   mis.intervalos[,i] <- calcula.el.intervalo(i)
+  if (mis.intervalos[1, i] <= mu && mis.intervalos[2, i] >= mu){
+    c= c+1
+  }
+  else{
+    c=c
+  }
 }
 
+Porcentaje <- c/5000 #Proporcion de intervalos que atrapan al parametro
+
 #---Gráfico---#
+
 
 plot(1:5000, type = "n",
      xlim = range(mis.intervalos),
@@ -48,15 +57,10 @@ abline(v = mu, lty = 2, col=("red"))
 
 for(i in 1:5000) {
   segments(mis.intervalos[1,i], i, mis.intervalos[2,i], i,
-           col = ifelse(mis.intervalos[1, i] < mu & mis.intervalos[2, i] > mu, "gray", "blue"))  
-  #if (mis.intervalos < calcula.el.intervalo()[i] && mis.intervalos > calcula.el.intervalo()[i]) {
-      #contador = contador + 1 }
-  #else {contador = contador}
+           col = ifelse(mis.intervalos[1, i] < mu & mis.intervalos[2, i] > mu, "gray", "red"))  
 }
 
-hist(muestras)
-
-
+  
 #---Para n=30---#
 
 #---Para n=50---#
@@ -68,6 +72,8 @@ hist(muestras)
 
 
 #--------------- Punto 7 ---------------#
+
+
 
 #---------------------------------------#
 
