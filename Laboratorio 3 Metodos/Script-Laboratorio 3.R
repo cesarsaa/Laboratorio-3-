@@ -47,17 +47,21 @@ for(i in 1:5000) {
 Porcentaje <- c/5000 #Proporcion de intervalos que atrapan al parametro
 
 #---Gráfico---#
+plot(1:100, type = "n",
+     xlim = range(mis.intervalos), main = "Intervalo de confianza Distribucion Normal",
+     ylab = "Muestreos", xlab = "Intervalo")
 
+abline(v = mu, lty = 2, col=("black"))
 
-plot(1:5000, type = "n",
-     xlim = range(mis.intervalos),
-     ylab = "Muestreos")
-
-abline(v = mu, lty = 2, col=("red"))
-
-for(i in 1:5000) {
+for(i in 1:100) {
   segments(mis.intervalos[1,i], i, mis.intervalos[2,i], i,
            col = ifelse(mis.intervalos[1, i] < mu & mis.intervalos[2, i] > mu, "gray", "red"))  
+}
+
+longitud <- numeric(length = B)
+for (i in 1:B){
+  longitud[i]=(mis.intervalos[2,i]-mis.intervalos[1,i])
+  longitudpro=sum(longitud)/B
 }
 
 #---Para n=30---#
@@ -98,6 +102,12 @@ for(i in 1:5000) {
 
 Porcentaje <- c/5000 #Proporcion de intervalos que atrapan al parametro
 
+longitud <- numeric(length = B)
+for (i in 1:B){
+  longitud[i]=(mis.intervalos[2,i]-mis.intervalos[1,i])
+  longitudpro=sum(longitud)/B
+}
+
 #---Para n=50---#
 
 B <- 5000 ## número de experimentos
@@ -137,6 +147,11 @@ for(i in 1:5000) {
 
 Porcentaje <- c/5000 #Proporcion de intervalos que atrapan al parametro
 
+longitud <- numeric(length = B)
+for (i in 1:B){
+  longitud[i]=(mis.intervalos[2,i]-mis.intervalos[1,i])
+  longitudpro=sum(longitud)/B
+}
 #---Para n=100---#
 
 B <- 5000 ## número de experimentos
@@ -175,15 +190,63 @@ for(i in 1:5000) {
 }
 
 Porcentaje <- c/5000 #Proporcion de intervalos que atrapan al parametro
+
+longitud <- numeric(length = B)
+for (i in 1:B){
+  longitud[i]=(mis.intervalos[2,i]-mis.intervalos[1,i])
+  longitudpro=sum(longitud)/B
+}
+
+# Para una Exponencial
+B <- 5000 ## número de experimentos
+n <- 100 ## tamaño de muestra
+mu <- 5
+sd <- 25
+alpha <- 0.05
+cuantil <- qexp(1-alpha/2)
+
+muestras <- replicate(B, rexp(n, mu))
+
+
+calcula.el.intervalo <- function(columna) {
+  
+  m <- muestras[, columna]
+  
+  sem <- sd(m)/sqrt(length(m))
+  
+  lim.inf <- mean(1/m) - cuantil * sqrt(sd)/sqrt(n)
+  lim.sup <- mean(1/m) + cuantil * sqrt(sd)/sqrt(n)
+  
+  c(lim.inf, lim.sup)
+}
+
+#---Cálculo de los nuevos intervalos---#
+c=0
+mis.intervalos <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
+
+for(i in 1:5000) {
+  mis.intervalos[,i] <- calcula.el.intervalo(i)
+  if (mis.intervalos[1, i] <= mu && mis.intervalos[2, i] >= mu){
+    c= c+1
+  }
+  else{
+    c=c
+  }
+}
+
+Porcentaje <- c/5000 #Proporcion de intervalos que atrapan al parametro
+
+longitud <- numeric(length = B)
+for (i in 1:B){
+  longitud[i]=(mis.intervalos[2,i]-mis.intervalos[1,i])
+  longitudpro=sum(longitud)/B
+}
+
 #--------------- Punto 4 ---------------#
   
 
 
 #--------------- Punto 7 ---------------#
-
-#----Parametros de las distribuciones----#
-
-
 ################   Parametros de las distribuciones #######################
 
 k=100               ## Parametro de forma de la gamma
