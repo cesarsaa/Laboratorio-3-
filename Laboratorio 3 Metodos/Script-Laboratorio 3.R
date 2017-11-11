@@ -170,7 +170,16 @@ for (i in 1:B){
   longitudpro4=sum(longitud4)/B
 }
 
+tabla_cv<-c(Porcentaje1,Porcentaje2,Porcentaje3,Porcentaje4)
+tabla_sd<-c(longitudpro1,longitudpro2,longitudpro3,longitudpro4)
+tabla_cs<-c(n1,n2,n3,n4)
+
 ### Graficos ###
+plot(tabla_cs, tabla_cv, type="b", main="Porcentaje de cubrimiento esperado para n=10, 30, 50, 100", 
+     xlab="tamaño de la muestra", ylab="porcentaje")
+plot(tabla_cs, tabla_sd, type="b", main="Longitud promedio para n=10, 30, 50, 100", 
+     xlab="tamaño de la muestra", ylab="Longitud")
+
 par(mfrow=c(2,2))
 plot(1:100, type = "n",
      xlim = range(mis.intervalos1), main = "Intervalo de confianza Distribucion Normal con n=10",
