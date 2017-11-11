@@ -84,19 +84,41 @@
  
 % Desarrollo de los contenidos del documento
 \pagebreak\section{Situaci\'{o}n 1}
-\subsection{Punto a.}
+~\\ Se generaron 5000 muestras aleatorias de tama\~{n}o n=10, de una poblacion normal con parametros $\mu=5$ y $\sigma=1$ y para cada una de las muestras, se encontro un intervalo de confianza para la media y la varianza respectivamente, con una confianza del $95\%$.
+~\\ \textbf{Para la media:}
+~\\Nos arrojo que el porcentaje de intervalos que atrapan la verdadera media es: $95.22\%$
+~\\ Y la longitud promedio o esperada de cada intervalo fue hallada como: $\sum\limits_{i=1}^{5000}\frac{(LS_{i}-LI_{i})}{5000}$ lo que nos arrojo un resultado de 1.2395.
 
-~\\ \begin{center}
- \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+~\\El porcentaje de intervalos que atrapan la verdadera media tiene mucho sentido, ya que, al trabajar con una confianza del $95\%$, estamos diciendo que el $95\%$ de las veces que se repita el experimento (en este caso que se obtenga una muestra distinta de la misma poblacion), el verdadero valor de la media caera en el intervalo obtenido. Como obtuvimos un porcentaje del $95.22\%$, nos indica que el $95.22\%$ de las veces que se repitio el experimento (remuestrear y obtener el IC para la media), la verdadera media cayo en el intervalo encontrado.
+
+~\\ Con respecto a la longitud promedio, esta nos arroja la amplitud que tiene aproximadamente cada intervalo. En este caso, todos los intervalos tienen exactamente la misma longitud, ya que utilizamos la estimacion cuando $\sigma$ es conocida, y en este tipo de estimacion, la parte que se le suma y se le resta a la media muestral para hallar el intervalo de confianza, no depende de los datos. esa parte es $\pm Z_{1-\frac{\alpha}{2}}\cdot\frac{\sigma}{\sqrt{n}}$. Entonces,en este caso, el 1.2395 que nos arrojo la longitud promedio,nos dice que cada uno de los 5000 intervalos tiene una longitud de 1.2395.
+
+~\\ \textbf{Para la varianza:}
+\subsection{Punto a.}
+~\\ \textbf{Para la media:}
+~\\ Utilizamos la siguiente tabla para ver mas facilmente la comparacion por tama\~{n}os de muestra, de la proporcion de intervalos que atrapan la verdadera media y de la longitud promedio de los intervalos.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
 \hline 
-\rule[-1ex]{0pt}{2.5ex} ANTES & 12 & 10 & 15 & 8 & 19 & 14 & 12 & 21 & 16 & 11 & 8 & 15 \\ 
+\rule[-1ex]{0pt}{2.5ex}  & n=10 & n=30 & n=50 & n=100 \\ 
 \hline 
-\rule[-1ex]{0pt}{2.5ex} DESPUES & 11 & 11 & 17 & 9 & 21 & 13 & 16 & 25 & 20 & 18 & 10 & 17 \\ 
+\rule[-1ex]{0pt}{2.5ex} Porcentaje & 0.9522 & 0.9474 & 0.9508 & 0.9464 \\ 
 \hline 
-\rule[-1ex]{0pt}{2.5ex} DIFERENCIA & 1 & -1 & -2 & -1 & -2 & 1 & -4 & -4 & -4 & -7 & -2 & -2 \\ 
+\rule[-1ex]{0pt}{2.5ex} Longitud promedio del intervalo & 1.2395 & 0.7156 & 0.5543 & 0.3919 \\ 
 \hline 
 \end{tabular} 
 \end{center}
+
+~\\ La siguiente figura nos muestra los 100 primeros intervalos con cada tama\~{n}o de muestra (10,20,50,100), ya que si elaborabamos la grafica con los 5000, no nos daba una vision clara ni comparable. 
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Punto1.png}
+        \caption{Grafica comparativa de los 100 primeros intervalos por cada tama\~{n}o de muestra}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+
+
 
 \subsection{Punto b.}
 
@@ -254,9 +276,58 @@
 ~\\ Como el intervalo encontrado tiene una confianza del $98\%$, decimos que el $98\%$ de las veces que se repita el experimento en las mismas condiciones, la diferencia de medias de resistencia reales va a caer entre -746.8526 y 986.2026. Ademas, si detallamos la imagen, podemos ver que el intervalo obtenido contiene al cero, esto quiere decir que $\mu_1=\mu_2$ o son muy cercanos. Por lo que concluimos que el uso del revestimiendo no eleva la resistencia promedio de las tuberias, y no es recomendable el uso de este como mecanismo complementario.
 
 \pagebreak\section{Situaci\'{o}n 7}
-\subsection{Punto a.}
-\subsection{Punto b.}
-\subsection{Punto c.}
+~\\ Para comparar los tres estimadores propuestos para el CV, se genero una poblacion para cada distribucion (normal, gamma y uniforme) y se obtuvieron 5000 muestras aleatorias para cada uno de los distintos tama\~{n}os de muestra (5,10,20,30,...,100). Las poblaciones sobre las cuales se obtuvieron las muestras fueron definidas de la siguiente manera:
+~\\ 1. $Normal(\mu=200,\sigma=\sqrt{400})$
+~\\ 2. $Gamma(\alpha=0.5,\beta=100)$
+~\\ 3. $Uniforme(a=200,b=600)$
+
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Rplot.png}
+        \caption{Proporcion de cobertura y longitud promedio de los intervalos para $\sigma$ de la distribucion normal}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Rplot01.png}
+        \caption{Proporcion de cobertura y longitud promedio de los intervalos para $cv$ de la distribucion normal}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Rplot02.png}
+        \caption{Proporcion de cobertura y longitud promedio de los intervalos para $\sigma$ de la distribucion gamma}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Rplot03.png}
+        \caption{Proporcion de cobertura y longitud promedio de los intervalos para $cv$ de la distribucion gamma}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Rplot04.png}
+        \caption{Proporcion de cobertura y longitud promedio de los intervalos para $\sigma$ de la distribucion uniforme}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+
+\begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Rplot05.png}
+        \caption{Proporcion de cobertura y longitud promedio de los intervalos para $cv$ de la distribucion uniforme}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
 
 \bibliography{Bibliografia}
 \end{document}
