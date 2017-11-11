@@ -192,12 +192,6 @@ for(i in 1:100) {
            col = ifelse(mis.intervalos1[1, i] < mu & mis.intervalos1[2, i] > mu, "gray", "red"))  
 }
 
-longitud1 <- numeric(length = B)
-for (i in 1:B){
-  longitud1[i]=(mis.intervalos1[2,i]-mis.intervalos1[1,i])
-  longitudpro1=sum(longitud1)/B
-}
-
 plot(1:100, type = "n",
      xlim = range(mis.intervalos2), main = "Intervalo de confianza Distribucion Normal con n=30",
      ylab = "Muestreos", xlab = "Intervalo")
