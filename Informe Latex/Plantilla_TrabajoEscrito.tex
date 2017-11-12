@@ -95,22 +95,22 @@
 
 ~\\ \textbf{Para la varianza:}
 \subsection{Punto a.}
-~\\ \textbf{Para la media:}
+~\\ \textbf{PARA LA MEDIA:}
 ~\\ Utilizamos la siguiente tabla para ver mas facilmente la comparacion por tama\~{n}os de muestra, de la proporcion de intervalos que atrapan la verdadera media y de la longitud promedio de los intervalos.
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
 \rule[-1ex]{0pt}{2.5ex}  & n=10 & n=30 & n=50 & n=100 \\ 
 \hline 
-\rule[-1ex]{0pt}{2.5ex} Porcentaje & 0.9522 & 0.9474 & 0.9508 & 0.9464 \\ 
+\rule[-1ex]{0pt}{2.5ex} Porcentaje & 0.9524 & 0.9454 & 0.9496 & 0.9502 \\ 
 \hline 
-\rule[-1ex]{0pt}{2.5ex} Longitud promedio del intervalo & 1.2395 & 0.7156 & 0.5543 & 0.3919 \\ 
+\rule[-1ex]{0pt}{2.5ex} Longitud promedio del intervalo & 2.8446 & 1.1712 & 0.8543 & 0.5795 \\ 
 \hline 
 \end{tabular} 
 \end{center}
 
-~\\ La siguiente figura nos muestra los 100 primeros intervalos con cada tama\~{n}o de muestra (10,20,50,100), ya que si elaborabamos la grafica con los 5000, no nos daba una vision clara ni comparable. 
-\begin{figure}[!h]
+~\\ \pagebreak La siguiente figura nos muestra los 100 primeros intervalos con cada tama\~{n}o de muestra (10,20,50,100), ya que si elaborabamos la grafica con los 5000 intervalos estimados, no nos daba una vision clara ni comparable de lo que ocurre. 
+~\\ \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Punto1.png}
         \caption{Grafica comparativa de los 100 primeros intervalos por cada tama\~{n}o de muestra}
@@ -120,7 +120,49 @@
 
 
 
-\subsection{Punto b.}
+~\\\textbf{Representacion grafica del porcentaje de cubrimiento esperado de los intervalos de la media:}
+~\\ \begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Pa1.png}
+        \caption{Grafica del porcentaje de cubrimiento de los intervalos para $\mu$ por cada tama\~{n}o de muestra}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento estan cerca del $95\%$, lo cual es logico, ya que estamos trabajando con una confianza del $95\%$, lo que nos dice que el $95\%$ de las veces que se repita el proceso (remuestrear y hallar el intervalo de confianza) la verdadera media o la media real, va a caer dentro del intervalo estimado. Ademas podemos ver que el porcentaje de cubrimiento disminuye o aumenta sin depender de el tama\~{n}o de muestra n(10,30,50,100), es decir, no se ve un patron claro de dependencia entre el tama\~{n}o de las muestras y el porcentaje de cubrimiento de los intervalos estimados.
+
+
+~\\ \textbf{Representacion grafica de la longitud esperada por intervalo para la media:}
+~\\ \begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Pa2.png}
+        \caption{Grafica de la longitud esperada de cada intervalo para $\mu$ por cada tama\~{n}o de muestra}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En la anterior imagen observamos que la longitud mas alta es la de n=10, y no sobrepasa de 1.5, y la mas baja es la de n=100 y es de aproximadamente 0.4. Esto nos muestra que hay una correlacion lineal negativa entre el tama\~{n}o de muestra y la longitud del intervalo, es decir, mientras mayor es el tama\~{n}o de muestra n, menor es la longitud del intervalo. Lo anterior tiene mucho sentido, ya que la parte que se le suma y se le resta a la media de cada muestra, para hallar una estimacion por intervalos para la media real $\mu$ es, $Z_{(1-\alpha)}\cdot\frac{\sigma}{\sqrt{n}}$ y vemos que esta expresion es mas peque\~{n}a cuando el n aumenta, haciendo menor, la amplitud de cada intervalo.
+
+\pagebreak \textbf{PARA LA VARIANZA:}
+~\\\textbf{Representacion grafica del porcentaje de cubrimiento esperado de los intervalos de la varianza:}
+~\\ \begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Pb1.png}
+        \caption{Grafica del porcentaje de cubrimiento de los intervalos para $\sigma^2$ por cada tama\~{n}o de muestra}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento de los intervalos para la varianza estan cerca del $95\%$, lo cual es logico, ya que como se explico en el punto anterior, estamos trabajando con una confianza del $95\%$, lo que nos dice que el $95\%$ de las veces que se repita el proceso (remuestrear y hallar el intervalo de confianza) la verdadera varianza o la varianza real, va a caer dentro del intervalo estimado. Ademas podemos ver que el porcentaje de cubrimiento disminuye o aumenta sin depender de el tama\~{n}o de muestra n(10,30,50,100), es decir, no se ve un patron claro de dependencia entre el tama\~{n}o de las muestras y el porcentaje de cubrimiento de los intervalos estimados para la varianza.
+
+
+~\\ \textbf{Representacion grafica de la longitud esperada por intervalo para la media:}
+~\\ \begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Pb2.png}
+        \caption{Grafica de la longitud esperada de cada intervalo para $\sigma^2$ por cada tama\~{n}o de muestra}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En esta imagen, al igual que en la de los intervalos para la media. Vemos que la longitud es mayor para los tama\~{n}os de muestra de n=10 y es menor para los tama\~{n}os de muestra de n=100, lo que nos muestra que entre estas dos variables (tama\~{n}o de muestra y longitud del intervalo) existe una correlacion lineal negativa, es decir, cuando aumenta el tama\~{n}o de muestra, disminuye la longitud de los intervalos estimados.
+\pagebreak\subsection{Punto b.}
 
 
 \pagebreak\section{Situaci\'{o}n 2}
