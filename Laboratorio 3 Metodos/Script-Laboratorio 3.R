@@ -7,14 +7,14 @@
 
 #--------------- Punto 1 ---------------#
 
-B <- 5000 ## número de experimentos
+B <- 5000 ## n??mero de experimentos
 mu <- 5
 sd <- 1
 alpha <- 0.05
 cuantil <- qnorm(1-alpha/2)
 
 #---Para n=10---#
-n1 <- 10 ## tamaño de muestra
+n1 <- 10 ## tama??o de muestra
 
 muestras1 <- replicate(B, rnorm(n1, mu, sd))
 
@@ -30,7 +30,7 @@ calcula.el.intervalo1 <- function(columna) {
   c(lim.inf1, lim.sup1)
 }
 
-#Cálculo de los nuevos intervalos#
+#C??lculo de los nuevos intervalos#
 c1=0
 mis.intervalos1 <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
 
@@ -53,7 +53,7 @@ for (i in 1:B){
 }
 
 #---Para n=30---#
-n2 <- 30 ## tamaño de muestra
+n2 <- 30 ## tama??o de muestra
 
 muestras2 <- replicate(B, rnorm(n2, mu, sd))
 
@@ -69,7 +69,7 @@ calcula.el.intervalo2 <- function(columna) {
   c(lim.inf2, lim.sup2)
 }
 
-#Cálculo de los nuevos intervalos#
+#C??lculo de los nuevos intervalos#
 c2=0
 mis.intervalos2 <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
 
@@ -92,7 +92,7 @@ for (i in 1:B){
 }
 
 #---Para n=50---#
-n3 <- 50 ## tamaño de muestra
+n3 <- 50 ## tama??o de muestra
 
 muestras3 <- replicate(B, rnorm(n3, mu, sd))
 
@@ -108,7 +108,7 @@ calcula.el.intervalo3 <- function(columna) {
   c(lim.inf3, lim.sup3)
 }
 
-#Cálculo de los nuevos intervalos#
+#C??lculo de los nuevos intervalos#
 c3=0
 mis.intervalos3 <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
 
@@ -132,7 +132,7 @@ for (i in 1:B){
 
 #---Para n=100---#
 
-n4 <- 100 ## tamaño de muestra
+n4 <- 100 ## tama??o de muestra
 
 muestras4 <- replicate(B, rnorm(n4, mu, sd))
 
@@ -148,7 +148,7 @@ calcula.el.intervalo4 <- function(columna) {
   c(lim.inf4, lim.sup4)
 }
 
-#Cálculo de los nuevos intervalos#
+#Calculo de los nuevos intervalos#
 c4=0
 mis.intervalos4 <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
 
@@ -176,9 +176,9 @@ tabla_cs<-c(n1,n2,n3,n4)
 
 ### Graficos ###
 plot(tabla_cs, tabla_cv, type="b", main="Porcentaje de cubrimiento esperado para n=10, 30, 50, 100", 
-     xlab="tamaño de la muestra", ylab="porcentaje")
+     xlab="tama??o de la muestra", ylab="porcentaje")
 plot(tabla_cs, tabla_sd, type="b", main="Longitud promedio para n=10, 30, 50, 100", 
-     xlab="tamaño de la muestra", ylab="Longitud")
+     xlab="tama??o de la muestra", ylab="Longitud")
 
 par(mfrow=c(2,2))
 plot(1:100, type = "n",
@@ -227,29 +227,27 @@ for(i in 1:100) {
 
 #-------------------------------------------------------------#
 # Para una Exponencial
-B <- 5000 ## número de experimentos
-n <- 100 ## tamaño de muestra
+B <- 5000 ## n??mero de experimentos
+n <- 100 ## tama??o de muestra
 mu <- 5
 sd <- 25
-alpha <- 0.05
-cuantil <- qexp(1-alpha/2)
+coeficiente <- 0.95
+alpha <- 1-coeficiente  
 
-muestras <- replicate(B, rexp(n, mu))
+muestras <- replicate(B, rexp(n,1/5))
 
 
 calcula.el.intervalo <- function(columna) {
   
   m <- muestras[, columna]
   
-  sem <- sd(m)/sqrt(length(m))
-  
-  lim.inf <- mean(1/m) - cuantil * sqrt(sd)/sqrt(n)
-  lim.sup <- mean(1/m) + cuantil * sqrt(sd)/sqrt(n)
+  lim.inf <- mean(m) - qt(alpha/2,n-1)*var(m)/sqrt(n)
+  lim.sup <- mean(m) + qt(alpha/2,n-1)*var(m)/sqrt(n)
   
   c(lim.inf, lim.sup)
 }
 
-#---Cálculo de los nuevos intervalos---#
+#---C??lculo de los nuevos intervalos---#
 c=0
 mis.intervalos <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
 
@@ -286,23 +284,23 @@ c=200 		    ## Parametro uniforme
 d=600 		    ## Parametro uniforme
 
 ########################      distribucion normal    ##################################
-cv_r=sigma/media    ## Coeficiente de variaciÛn
+cv_r=sigma/media    ## Coeficiente de variaci??n
 alpha=0.05          ## Trabajamos con un nivel de confianza del 0.05
 nsim=5000           ## numero de simulaciones
 nsim2=100          ## Numero de remuestras
-n<-c(5,seq(10,100,10)) ## TamaÒo de muestras
+n<-c(5,seq(10,100,10)) ## Tama??o de muestras
 
 tabla_sd<-matrix(nrow=11,ncol=6)               ## Matriz que almacena los 
 colnames(tabla_sd)<-c("L.I 1","C.I 1", "L.I 2" #valores de la longitud media 
                       ,"C.I 2","L.I 3","C.I 3")#y la cobertura media de cada 
-rownames(tabla_sd)<-c("5","10","20","30","40"  #intervalo para cada tamaÒo 
+rownames(tabla_sd)<-c("5","10","20","30","40"  #intervalo para cada tama??o 
                       ,"50","60", "70","80",   #de muestra para la desviacion
                       "90","100")
 
 tabla_cv<-matrix(nrow=11,ncol=8)               ## Matriz que almacena los 
 colnames(tabla_cv)<-c("L.I 1","C.I 1", "L.I 2" #valores de la longitud media 
                       ,"C.I 2","L.I 3","C.I 3",#y la cobertura media de cada
-                      "L.I 4", "C.I 4")        #intervalo para cada tamaÒo 
+                      "L.I 4", "C.I 4")        #intervalo para cada tama??o 
 rownames(tabla_cv)<-c("5","10","20","30",      #de muestra para la desviacion
                       "40","50","60",
                       "70","80","90","100")
@@ -311,7 +309,7 @@ dist<-function(n,a,b){    ## Ditribucion a evaluar
   x<-rnorm(n,a,b)
 }
 
-###################### Intevalos para la desviaciÛn #########################
+###################### Intevalos para la desviaci??n #########################
 
 for(l in 1:length(n)){
   a=0      
@@ -372,9 +370,9 @@ for(l in 1:length(n)){
   tabla_sd[l,4]=contador2/nsim
 }
 
-##### Intervalo bootrap para la desviaciÛn estandar 
+##### Intervalo bootrap para la desviaci??n estandar 
 
-sd_boot=0  ## Vector para la distribcion de la desviaciÛn
+sd_boot=0  ## Vector para la distribcion de la desviaci??n
 
 for(m in 1:length(n)){
   long7=0  ## vector de longitudes
@@ -410,7 +408,7 @@ for(j in 1:length(n)){
   for(i in 1:nsim){ 
     x<-dist(n[j],media,sigma) ## distribucion a evaluar
     
-    cv= sd(x)/mean(x)  ## Coeficiente de varianciÛn estiamado
+    cv= sd(x)/mean(x)  ## Coeficiente de varianci??n estiamado
     
     ## Inverlo 1
     li3=cv+(qnorm((alpha/2),0,1)*sqrt(1/(n[j]-1))*(cv^2)*(0.5+(cv^2)))
@@ -449,7 +447,7 @@ for(j in 1:length(n)){
   tabla_cv[j,6]=contador5/nsim
 }
 
-##### Intervalo bootrap para el coeficiente de variaciÛn ###############
+##### Intervalo bootrap para el coeficiente de variaci??n ###############
 cv_boot=0
 
 for(m in 1:length(n)){
@@ -476,7 +474,7 @@ for(m in 1:length(n)){
 par(mfrow=c(1,2))
 plot(tabla_sd[,2],main="Cobertura de los intervalos para sd
      en la distribucion Normal",col="red",type="o",
-     xaxt='n',ylim=c(0,1),pch=5,xlab="Tamaño muestra",
+     xaxt='n',ylim=c(0,1),pch=5,xlab="Tama??o muestra",
      ylab="Proporcion de aceptados")
 axis(1,1:length(n),n)
 lines(tabla_sd[,4],col="blue",type="o")
@@ -487,7 +485,7 @@ legend(5,0.7,c("alpha","estimador 1","estimador 2","Bootstrap"),
 
 plot(tabla_sd[,1],main="Longitud de los intervalos para sd
      en la distribucion Normal",col="red",type="o",
-     xaxt='n',ylim=c(0,max(tabla_sd[,1])),pch=5,xlab="Tamaño muestra",
+     xaxt='n',ylim=c(0,max(tabla_sd[,1])),pch=5,xlab="Tama??o muestra",
      ylab="Longitud")
 axis(1,1:length(n),n)
 lines(tabla_sd[,3],col="blue",type="o")
@@ -498,7 +496,7 @@ legend(5,90,c("estimador 1","estimador 2","Bootstrap"),
 par(mfrow=c(1,2))
 plot(tabla_cv[,2],main="Cobertura de los intervalos para CV
      en la distribucion Normal",col="red",type="o",
-     xaxt='n',ylim=c(0,1),pch=5,xlab="Tamaño muestra",
+     xaxt='n',ylim=c(0,1),pch=5,xlab="Tama??o muestra",
      ylab="Proporcion de aceptados")
 axis(1,1:length(n),n)
 lines(tabla_cv[,4],col="blue",type="o")
@@ -510,7 +508,7 @@ legend(5,0.85,c("alpha","estimador 1","estimador 2","estimador 3","Bootstrap"),
 
 plot(tabla_cv[,1],main="Longitud de los intervalos para CV
      en la distribucion Normal",col="red",type="o",
-     xaxt='n',ylim=c(0,max(tabla_cv)),pch=5,xlab="Tamaño muestra",
+     xaxt='n',ylim=c(0,max(tabla_cv)),pch=5,xlab="Tama??o muestra",
      ylab="Longitud")
 axis(1,1:length(n),n)
 lines(tabla_cv[,3],col="blue",type="o")
@@ -523,14 +521,14 @@ legend(5,0.85,c("estimador 1","estimador 2","estimador 3","Bootstrap"),
 tabla_cv<-matrix(nrow=11,ncol=8)               ## Matriz que almacena los 
 colnames(tabla_cv)<-c("L.I 1","C.I 1", "L.I 2" #valores de la longitud media 
                       ,"C.I 2","L.I 3","C.I 3",#y la cobertura media de cada
-                      "L.I 4", "C.I 4")        #intervalo para cada tamaÒo 
+                      "L.I 4", "C.I 4")        #intervalo para cada tama??o 
 rownames(tabla_cv)<-c("5","10","20","30",      #de muestra para la desviacion
                       "40","50","60",
                       "70","80","90","100")
 tabla_sd<-matrix(nrow=11,ncol=6)               ## Matriz que almacena los 
 colnames(tabla_sd)<-c("L.I 1","C.I 1", "L.I 2" #valores de la longitud media 
                       ,"C.I 2","L.I 3","C.I 3")#y la cobertura media de cada 
-rownames(tabla_sd)<-c("5","10","20","30","40"  #intervalo para cada tamaÒo 
+rownames(tabla_sd)<-c("5","10","20","30","40"  #intervalo para cada tama??o 
                       ,"50","60", "70","80",   #de muestra para la desviacion
                       "90","100")
 
@@ -541,7 +539,7 @@ sigma=sqrt(400)
 cv_g=1/sqrt(100) 
 nsim=5000           ## numero de simulaciones
 nsim2=100          ## Numero de remuestras
-n<-c(5,seq(10,100,10)) ## TamaÒo de muestras
+n<-c(5,seq(10,100,10)) ## Tama??o de muestras
 
 for(l in 1:length(n)){
   a=0      
@@ -602,9 +600,9 @@ for(l in 1:length(n)){
   tabla_sd[l,4]=contador2/nsim
 }
 
-##### Intervalo bootrap para la desviaciÛn estandar 
+##### Intervalo bootrap para la desviaci??n estandar 
 
-sd_boot=0  ## Vector para la distribcion de la desviaciÛn
+sd_boot=0  ## Vector para la distribcion de la desviaci??n
 
 for(m in 1:length(n)){
   long7=0  ## vector de longitudes
@@ -639,7 +637,7 @@ for(j in 1:length(n)){
   for(i in 1:nsim){ 
     x<-rgamma(n[j],shape=k,scale=lambda_ga) ## distribucion a evaluar
     
-    cv= sd(x)/mean(x)  ## Coeficiente de varianciÛn estiamado
+    cv= sd(x)/mean(x)  ## Coeficiente de varianci??n estiamado
     
     ## Inverlo 1
     li3=cv+(qnorm((alpha/2),0,1)*sqrt(1/(n[j]-1))*(cv^2)*(0.5+(cv^2)))
@@ -678,7 +676,7 @@ for(j in 1:length(n)){
   tabla_cv[j,6]=contador5/nsim
 }
 
-##### Intervalo bootrap para el coeficiente de variaciÛn ###############
+##### Intervalo bootrap para el coeficiente de variaci??n ###############
 cv_boot=0
 
 for(m in 1:length(n)){
@@ -706,7 +704,7 @@ for(m in 1:length(n)){
 par(mfrow=c(1,2))
 plot(tabla_sd[,2],main="Cobertura de los intervalos para sd
      en la distribucion Gamma",col="red",type="o",
-     xaxt='n',ylim=c(0.6,1),pch=5,xlab="Tamaño de muestra",
+     xaxt='n',ylim=c(0.6,1),pch=5,xlab="Tama??o de muestra",
      ylab="Proporcion de aceptados")
 axis(1,1:length(n),n)
 lines(tabla_sd[,4],col="blue",type="o")
@@ -717,7 +715,7 @@ legend(5,0.85,c("alpha","estimador 1","estimador 2","Bootstrap"),
 
 plot(tabla_sd[,1],main="Longitud de los intervalos para sd
      en la distribucion Gamma",col="red",type="o",
-     xaxt='n',ylim=c(0,max(tabla_sd[,1])),pch=5,xlab="Tamaño de muestra",
+     xaxt='n',ylim=c(0,max(tabla_sd[,1])),pch=5,xlab="Tama??o de muestra",
      ylab="Proporcion de aceptados")
 axis(1,1:length(n),n)
 lines(tabla_sd[,3],col="blue",type="o")
@@ -728,7 +726,7 @@ legend(5,15,c("estimador 1","estimador 2","Bootstrap"),
 par(mfrow=c(1,2))
 plot(tabla_cv[,2],main="Cobertura de los intervalos para CV
      en la distribucion Gamma",col="red",type="o",
-     xaxt='n',ylim=c(0,1),pch=5,xlab="Tamaño de muestra",
+     xaxt='n',ylim=c(0,1),pch=5,xlab="Tama??o de muestra",
      ylab="Proporcion de aceptados")
 axis(1,1:length(n),n)
 lines(tabla_cv[,4],col="blue",type="o")
@@ -740,7 +738,7 @@ legend(5,0.85,c("alpha","estimador 1","estimador 2","estimador 3","Bootstrap"),
 
 plot(tabla_cv[,1],main="Longitud de los intervalos para CV
      en la distribucion Gamma",col="red",type="o",
-     xaxt='n',ylim=c(0,max(tabla_cv)),pch=5,xlab="Tamaño de muestra",
+     xaxt='n',ylim=c(0,max(tabla_cv)),pch=5,xlab="Tama??o de muestra",
      ylab="Proporcion de aceptados")
 axis(1,1:length(n),n)
 lines(tabla_cv[,3],col="blue",type="o")
@@ -750,23 +748,23 @@ legend(5,0.85,c("estimador 1","estimador 2","estimador 3","Bootstrap"),
        col=c("red","blue","purple","black"),lty=c(1,1),cex=0.8) 
 
 ########################     distribucion Uniforme   ##################################
-cv_r=sigma/media    ## Coeficiente de variaciÛn
+cv_r=sigma/media    ## Coeficiente de variaci??n
 alpha=0.05          ## Trabajamos con un nivel de confianza del 0.05
 nsim=5000           ## numero de simulaciones
 nsim2=100          ## Numero de remuestras
-n<-c(5,seq(10,100,10)) ## TamaÒo de muestras
+n<-c(5,seq(10,100,10)) ## Tama??o de muestras
 
 tabla_sd<-matrix(nrow=11,ncol=6)               ## Matriz que almacena los 
 colnames(tabla_sd)<-c("L.I 1","C.I 1", "L.I 2" #valores de la longitud media 
                       ,"C.I 2","L.I 3","C.I 3")#y la cobertura media de cada 
-rownames(tabla_sd)<-c("5","10","20","30","40"  #intervalo para cada tamaÒo 
+rownames(tabla_sd)<-c("5","10","20","30","40"  #intervalo para cada tama??o 
                       ,"50","60", "70","80",   #de muestra para la desviacion
                       "90","100")
 
 tabla_cv<-matrix(nrow=11,ncol=8)               ## Matriz que almacena los 
 colnames(tabla_cv)<-c("L.I 1","C.I 1", "L.I 2" #valores de la longitud media 
                       ,"C.I 2","L.I 3","C.I 3",#y la cobertura media de cada
-                      "L.I 4", "C.I 4")        #intervalo para cada tamaÒo 
+                      "L.I 4", "C.I 4")        #intervalo para cada tama??o 
 rownames(tabla_cv)<-c("5","10","20","30",      #de muestra para la desviacion
                       "40","50","60",
                       "70","80","90","100")
@@ -775,7 +773,7 @@ dist<-function(n,a,b){    ## Ditribucion a evaluar
   x<-runif(n,a,b)
 }
 
-###################### Intevalos para la desviaciÛn #########################
+###################### Intevalos para la desviaci??n #########################
 
 for(l in 1:length(n)){
   a=0      
@@ -836,9 +834,9 @@ for(l in 1:length(n)){
   tabla_sd[l,4]=contador2/nsim
 }
 
-##### Intervalo bootrap para la desviaciÛn estandar 
+##### Intervalo bootrap para la desviaci??n estandar 
 
-sd_boot=0  ## Vector para la distribcion de la desviaciÛn
+sd_boot=0  ## Vector para la distribcion de la desviaci??n
 
 for(m in 1:length(n)){
   long7=0  ## vector de longitudes
@@ -874,7 +872,7 @@ for(j in 1:length(n)){
   for(i in 1:nsim){ 
     x<-dist(n[j],c,d) ## distribucion a evaluar
     
-    cv= sd(x)/mean(x)  ## Coeficiente de varianciÛn estiamado
+    cv= sd(x)/mean(x)  ## Coeficiente de varianci??n estiamado
     
     ## Inverlo 1
     li3=cv+(qnorm((alpha/2),0,1)*sqrt(1/(n[j]-1))*(cv^2)*(0.5+(cv^2)))
@@ -913,7 +911,7 @@ for(j in 1:length(n)){
   tabla_cv[j,6]=contador5/nsim
 }
 
-##### Intervalo bootrap para el coeficiente de variaciÛn ###############
+##### Intervalo bootrap para el coeficiente de variaci??n ###############
 cv_boot=0
 
 for(m in 1:length(n)){
@@ -940,7 +938,7 @@ for(m in 1:length(n)){
 par(mfrow=c(1,2))
 plot(tabla_sd[,2],main="Cobertura de los intervalos para sd
      en la distribucion uniforme",col="red",type="o",
-     xaxt='n',ylim=c(0,1),pch=5,xlab="Tamaño de muestra",
+     xaxt='n',ylim=c(0,1),pch=5,xlab="Tama??o de muestra",
      ylab="Proporcion de aceptados")
 axis(1,1:length(n),n)
 lines(tabla_sd[,4],col="blue",type="o")
@@ -951,7 +949,7 @@ legend(5,0.7,c("alpha","estimador 1","estimador 2","Bootstrap"),
 
 plot(tabla_sd[,1],main="Longitud de los intervalos para sd
      en la distribucion uniforme",col="red",type="o",
-     xaxt='n',ylim=c(0,max(tabla_sd[,1])),pch=5,xlab="Tamaño de muestra",
+     xaxt='n',ylim=c(0,max(tabla_sd[,1])),pch=5,xlab="Tama??o de muestra",
      ylab="Longitud")
 axis(1,1:length(n),n)
 lines(tabla_sd[,3],col="blue",type="o")
@@ -962,7 +960,7 @@ legend(5,550,c("estimador 1","estimador 2","Bootstrap"),
 par(mfrow=c(1,2))
 plot(tabla_cv[,2],main="Cobertura de los intervalos para CV
      en la distribucion uniforme",col="red",type="o",
-     xaxt='n',ylim=c(0,1),pch=5,xlab="Tamaño de muestra",
+     xaxt='n',ylim=c(0,1),pch=5,xlab="Tama??o de muestra",
      ylab="Proporcion de aceptados")
 axis(1,1:length(n),n)
 lines(tabla_cv[,4],col="blue",type="o")
@@ -973,8 +971,8 @@ legend(5,250,c("alpha","estimador 1","estimador 2","estimador 3","Bootstrap"),
        col=c("green","red","blue","purple","black"),lty=c(1,1),cex=0.8)
 
 plot(tabla_cv[,1],main="Longitud de los intervalos para CV
-     en la distribuciÛn uniforme",col="red",type="o",
-     xaxt='n',ylim=c(0,max(tabla_cv)),pch=5,xlab="Tamaño de muestra",
+     en la distribuci??n uniforme",col="red",type="o",
+     xaxt='n',ylim=c(0,max(tabla_cv)),pch=5,xlab="Tama??o de muestra",
      ylab="Longitud")
 axis(1,1:length(n),n)
 lines(tabla_cv[,3],col="blue",type="o")
