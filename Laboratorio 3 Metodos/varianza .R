@@ -163,3 +163,4 @@ plot(tabla_cs, tabla_cv, type="b", main="Porcentaje cubrimiento de la varianza p
 plot(tabla_cs, tabla_sd, type="b", main="Longitud de la varianza para n=10, 30, 50, 100", 
      xlab="tamaño de la muestra", ylab="Longitud")
 
+

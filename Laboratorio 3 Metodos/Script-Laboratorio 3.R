@@ -241,8 +241,8 @@ calcula.el.intervalo <- function(columna) {
   
   m <- muestras[, columna]
   
-  lim.inf <- mean(m) - qt(alpha/2,n-1)*var(m)/sqrt(n)
-  lim.sup <- mean(m) + qt(alpha/2,n-1)*var(m)/sqrt(n)
+  lim.inf <- mean(m) - qt(alpha/2,n-1)*sqrt(var(m))/sqrt(n)    
+  lim.sup <- mean(m) + qt(alpha/2,n-1)*sqrt(var(m))/sqrt(n)
   
   c(lim.inf, lim.sup)
 }
@@ -268,6 +268,16 @@ for (i in 1:B){
   longitud[i]=(mis.intervalos[2,i]-mis.intervalos[1,i])
   longitudpro=sum(longitud)/B
 }
+
+tabla_cs<-c(n1,n2,n3,n4)
+tablaexp <-c(0,0,0,0)
+
+### Graficos ###
+plot(tabla_cs, tablaexp, type="b", main="Porcentaje de cubrimiento observado para la Media", 
+     sub="Distribucion Exponencial para n=10, 30, 50, 100", xlab="n", ylab="porcentaje")
+
+plot(tabla_cs, tablaexp, type="b", main="Porcentaje de cubrimiento observado para la varianza", 
+     sub="Distribucion Exponencial para n=10, 30, 50, 100", xlab="n", ylab="Longitud")
 
 #--------------- Punto 4 ---------------#
   
