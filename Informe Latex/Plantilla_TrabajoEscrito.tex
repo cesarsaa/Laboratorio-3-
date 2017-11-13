@@ -102,9 +102,9 @@
 \hline 
 \rule[-1ex]{0pt}{2.5ex}  & n=10 & n=30 & n=50 & n=100 \\ 
 \hline 
-\rule[-1ex]{0pt}{2.5ex} Porcentaje & 0.9524 & 0.9454 & 0.9496 & 0.9502 \\ 
+\rule[-1ex]{0pt}{2.5ex} Porcentaje de cubrimiento & 0.9522 & 0.9474 & 0.9508 & 0.9464 \\ 
 \hline 
-\rule[-1ex]{0pt}{2.5ex} Longitud promedio del intervalo & 2.8446 & 1.1712 & 0.8543 & 0.5795 \\ 
+\rule[-1ex]{0pt}{2.5ex} Longitud promedio del intervalo & 1.2395 & 0.7156 & 0.5543 & 0.3919 \\ 
 \hline 
 \end{tabular} 
 \end{center}
@@ -142,6 +142,18 @@
 ~\\ En la anterior imagen observamos que la longitud mas alta es la de n=10, y no sobrepasa de 1.5, y la mas baja es la de n=100 y es de aproximadamente 0.4. Esto nos muestra que hay una correlacion lineal negativa entre el tama\~{n}o de muestra y la longitud del intervalo, es decir, mientras mayor es el tama\~{n}o de muestra n, menor es la longitud del intervalo. Lo anterior tiene mucho sentido, ya que la parte que se le suma y se le resta a la media de cada muestra, para hallar una estimacion por intervalos para la media real $\mu$ es, $Z_{(1-\alpha)}\cdot\frac{\sigma}{\sqrt{n}}$ y vemos que esta expresion es mas peque\~{n}a cuando el n aumenta, haciendo menor, la amplitud de cada intervalo.
 
 \pagebreak \textbf{PARA LA VARIANZA:}
+~\\ Utilizamos la siguiente tabla para ver mas facilmente la comparacion por tama\~{n}os de muestra, de la proporcion de intervalos que atrapan la verdadera varianza y de la longitud promedio de los intervalos.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+\rule[-1ex]{0pt}{2.5ex}  & n=10 & n=30 & n=50 & n=100 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Porcentaje de cubrimiento & 0.9524 & 0.9454 & 0.9496 & 0.9502 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Longitud promedio del intervalo & 2.8446 & 1.1712 & 0.8543 & 0.5795 \\ 
+\hline 
+\end{tabular} 
+\end{center}
 ~\\\textbf{Representacion grafica del porcentaje de cubrimiento esperado de los intervalos de la varianza:}
 ~\\ \begin{figure}[!h]
     \begin{center}
@@ -153,7 +165,7 @@
 ~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento de los intervalos para la varianza estan cerca del $95\%$, lo cual es logico, ya que como se explico en el punto anterior, estamos trabajando con una confianza del $95\%$, lo que nos dice que el $95\%$ de las veces que se repita el proceso (remuestrear y hallar el intervalo de confianza) la verdadera varianza o la varianza real, va a caer dentro del intervalo estimado. Ademas podemos ver que el porcentaje de cubrimiento disminuye o aumenta sin depender de el tama\~{n}o de muestra n(10,30,50,100), es decir, no se ve un patron claro de dependencia entre el tama\~{n}o de las muestras y el porcentaje de cubrimiento de los intervalos estimados para la varianza.
 
 
-~\\ \textbf{Representacion grafica de la longitud esperada por intervalo para la media:}
+\pagebreak\textbf{Representacion grafica de la longitud esperada por intervalo para la varianza:}
 ~\\ \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Pb2.png}
@@ -162,8 +174,30 @@
     \end{center}
 \end{figure}
 ~\\ En esta imagen, al igual que en la de los intervalos para la media. Vemos que la longitud es mayor para los tama\~{n}os de muestra de n=10 y es menor para los tama\~{n}os de muestra de n=100, lo que nos muestra que entre estas dos variables (tama\~{n}o de muestra y longitud del intervalo) existe una correlacion lineal negativa, es decir, cuando aumenta el tama\~{n}o de muestra, disminuye la longitud de los intervalos estimados.
-\pagebreak\subsection{Punto b.}
 
+\pagebreak\subsection{Punto b.}
+~\\ Para este punto se simulo una poblacion exponencial con parametro $\lambda=\frac{1}{5}$ y de alli, se extrayeron las respectivas muestras de los distintos tama\~{n}os.
+~\\ \textbf{PARA LA MEDIA:}
+~\\\textbf{Representacion grafica del porcentaje de cubrimiento esperado de los intervalos para la media de una poblacion exponencial:}
+~\\ \begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Pc1.png}
+        \caption{Grafica del porcentaje de cubrimiento de los intervalos para $\mu$ por cada tama\~{n}o de muestra, para la poblaci\'{o}n exponencial}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento son del $0\%$, al contrario que en la poblacion normal, en la cual todos los intervalos estan cerca del $95\%$. Esto se debe a que la estimacion por intervalos que estamos aplicando, solo se utiliza cuando la poblacion es normal. Es decir, estas formulas no sirven para estimar $\mu$ de una poblacion no normal. Como se ve en la imagen, nos arroja intervalos que no tienen ningun sentido con la poblacion que estamos trabajando (en este caso, la exponencial) y que no atrapan el verdadero valor de $\mu$.
+
+\pagebreak\textbf{PARA LA VARIANZA:}
+~\\\textbf{Representacion grafica del porcentaje de cubrimiento esperado de los intervalos para la varianza de una poblacion exponencial:}
+~\\ \begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/Pc2.png}
+        \caption{Grafica del porcentaje de cubrimiento de los intervalos para $\sigma^2$ por cada tama\~{n}o de muestra, para la poblaci\'{o}n exponencial}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento son del $0\%$, al contrario que en la poblacion normal, en la cual todos los intervalos estan cerca del $95\%$. Esto se debe a que la estimacion por intervalos que estamos aplicando, solo se utiliza cuando la poblacion es normal. Es decir, estas formulas no sirven para estimar $\sigma^2$ de una poblacion no normal. Como se ve en la imagen, nos arroja intervalos que no tienen ningun sentido con la poblacion que estamos trabajando (en este caso, la exponencial) y que no atrapan el verdadero valor de $\sigma^2$.
 
 \pagebreak\section{Situaci\'{o}n 2}
 ~\\ Para darnos cuenta que en realidad la mayoria de personas aprueba el proyecto de fluoracion del agua, debemos encontrar un intervalo de confianza de la proporcion de personas que estan a favor, y ver si este esta por encima del 0.5.
