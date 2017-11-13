@@ -430,14 +430,14 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 ~\\ $IC(\frac{\sigma_1^{2}}{\sigma_2^{2}})_{(1-\alpha)\%}=\left[\frac{S_{1} ^{2}}{S_{2} ^{2}}\cdot F_{(\frac{\alpha}{2},n_{2}-1,n_{1}-1)}  ; \frac{S_{1} ^{2}}{S_{2} ^{2}}\cdot F_{(1-\frac{\alpha}{2},n_{2}-1,n_{1}-1)} \right]$
 
 ~\\ Hallamos $S_{1}^2$ y $S_{2}^2$:
-~\\ $S_{1}^2=\frac{\sum\limits_{i=1}^{10}(x_{1i}-\bar{x_1})^2}{9}=76875.9550$ y $S_{2}^2=\frac{\sum\limits_{i=1}^{8}(x_{2i}-\bar{x_2})^2}{7}=1044021.331$
+~\\ $S_{1}^2=\frac{\sum\limits_{i=1}^{10}(x_{1i}-\bar{x_1})^2}{9}=76875.9550$ y $S_{2}^2=\frac{\sum\limits_{i=1}^{8}(x_{2i}-\bar{x_2})^2}{7}=42382.41037$
 ~\\ Reemplazando todo en la formula del intervalo, nos queda:
 
-~\\ $IC(\frac{\sigma_1^{2}}{\sigma_2^{2}})_{98\%}=\left[\frac{76875.9550}{1044021.331}\cdot F_{(0.01,7,9)}  ; \frac{76875.9550}{1044021.331}\cdot F_{(0.99,7,9)} \right]$
+~\\ $IC(\frac{\sigma_1^{2}}{\sigma_2^{2}})_{98\%}=\left[\frac{76875.9550}{42382.41037}\cdot F_{(0.01,7,9)}  ; \frac{76875.9550}{42382.41037}\cdot F_{(0.99,7,9)} \right]$
 
-~\\ $IC(\frac{\sigma_1^{2}}{\sigma_2^{2}})_{98\%}=[0.0765\cdot0.14884  ;  0.0765\cdot5.61287]$
+~\\ $IC(\frac{\sigma_1^{2}}{\sigma_2^{2}})_{98\%}=[1.8138\cdot0.14884  ;  1.8138\cdot5.61287]$
 
-~\\ $IC(\frac{\sigma_1^{2}}{\sigma_2^{2}})_{98\%}=[0.01138 ; 0.42938]$
+~\\ $IC(\frac{\sigma_1^{2}}{\sigma_2^{2}})_{98\%}=[0.26997 ; 10.18098]$
 ~\\ Para interpretar mas facilmente el intervalo obtenido, hicimos la siguiente grafica:
 \begin{figure}[!h]
     \begin{center}
@@ -446,24 +446,24 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
         \label{fig:Densidad}
     \end{center}
 \end{figure}
-~\\ Como asignamos una confianza del $98\%$ quiere decir, que el $98\%$ de las veces que se repita el experimento con las mismas condiciones, la razon de varianzas poblacionales va a estar entre (0.01138 y 0.42938). Si nos fijamos en la imagen, vemos que el intervalo no contiene al 1, y cae por debajo de el. Entonces concluimos que no se pueden considerar las varianzas poblacionales como iguales, y se tiene fuerte evidencia de que $\sigma_{1}^2<\sigma_{2}^2$.
+~\\ Como asignamos una confianza del $98\%$ quiere decir, que el $98\%$ de las veces que se repita el experimento con las mismas condiciones, la razon de varianzas poblacionales va a estar entre (0.26997 y 10.18098). Si nos fijamos en la imagen, vemos que el intervalo obtenido contiene al 1. Entonces concluimos que no se pueden considerar las varianzas poblacionales como diferentes, ya que la razon de varianzas poblacionales puede ser 1.
 \subsection{Punto b.}
 ~\\ Para recomendar o no el uso del revestimiento como mecanismo complementario, encontraremos un intervalo de confianza para diferencia de medias, y asi darnos cuenta si la resistencia promedio de las tuberias aumento, disminuyo, o se mantuvo igual.
-~\\ Como informacion tenemos: $\bar{x_1}=2902.8$ , $\bar{x_2}=2783.125$, $S_{1}^2=76875.9550$ y $S_{2}^2=1044021.331$
+~\\ Como informacion tenemos: $\bar{x_1}=2902.8$ , $\bar{x_2}=3108.125$, $S_{1}^2=76875.9550$ y $S_{2}^2=42382.41037$
 
-~\\ Debemos aplicar la estimacion para diferencia de medias con $\sigma_{1}^2$ y $\sigma_{2}^2$ desconocidas pero diferentes, ya que en el punto anterior, mostramos que con una confianza del $98\%$ las varianzas poblacionales no van a ser iguales.
+~\\ Debemos aplicar la estimacion para diferencia de medias con $\sigma_{1}^2$ y $\sigma_{2}^2$ desconocidas pero iguales, ya que en el punto anterior, mostramos que con una confianza del $98\%$ las varianzas poblacionales pueden ser iguales.
 ~\\ Sustituyendo los valores en la formula, tenemos:
 
-~\\ $IC(\mu_1 - \mu_2)_{98\%}=(2902.8-2783.125)\pm t_{(0.99;16)}\cdot Sp\sqrt{\frac{1}{10}+\frac{1}{8}}$ 
+~\\ $IC(\mu_1 - \mu_2)_{98\%}=(2902.8-3108.125)\pm t_{(0.99;16)}\cdot Sp\sqrt{\frac{1}{10}+\frac{1}{8}}$ 
 
 ~\\ Debemos hallar Sp:
-~\\ $Sp=\sqrt{\frac{(n_{1}-1)S_{1}^2+(n_{2}-1)S_{2}^2}{n_{1}+n_{2}-2}}=\sqrt{\frac{9\cdot76875,9550+7\cdot1044021,331}{10+8-2}}=\sqrt{500002.057}=707.1082$
+~\\ $Sp=\sqrt{\frac{(n_{1}-1)S_{1}^2+(n_{2}-1)S_{2}^2}{n_{1}+n_{2}-2}}=\sqrt{\frac{9\cdot76875,9550+7\cdot42382.41037}{10+8-2}}=\sqrt{61785.02922}=248.56594$
 
 ~\\ Ahora, reemplazando todo, nos queda:
 
-~\\ $IC(\mu_1 - \mu_2)_{98\%}=[119.675 \pm 2.58349 \cdot 707.1082 \cdot 0.47434]$
+~\\ $IC(\mu_1 - \mu_2)_{98\%}=[-205.325 \pm 2.58349 \cdot 248.56594 \cdot 0.47434]$
 
-~\\ $IC(\mu_1 - \mu_2)_{98\%}=[-746.8526 ; 986.2026]$
+~\\ $IC(\mu_1 - \mu_2)_{98\%}=[-509.9308 ; 99.2808]$
 
 \pagebreak
 ~\\ \textbf{INTERPRETACION:}
@@ -476,7 +476,7 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
         \label{fig:Densidad}
     \end{center}
 \end{figure}
-~\\ Como el intervalo encontrado tiene una confianza del $98\%$, decimos que el $98\%$ de las veces que se repita el experimento en las mismas condiciones, la diferencia de medias de resistencia reales va a caer entre -746.8526 y 986.2026. Ademas, si detallamos la imagen, podemos ver que el intervalo obtenido contiene al cero, esto quiere decir que $\mu_1=\mu_2$ o son muy cercanos. Por lo que concluimos que el uso del revestimiendo no eleva la resistencia promedio de las tuberias, y no es recomendable el uso de este como mecanismo complementario.
+~\\ Como el intervalo encontrado tiene una confianza del $98\%$, decimos que el $98\%$ de las veces que se repita el experimento en las mismas condiciones, la diferencia de medias de resistencia reales va a caer entre -509.9308 y 99.2808. Ademas, si detallamos la imagen, podemos ver que el intervalo obtenido contiene al cero, esto quiere decir que $\mu_1=\mu_2$ o son muy cercanos. Por lo que concluimos que el uso del revestimiendo no eleva la resistencia promedio de las tuberias, y no es recomendable el uso de este como mecanismo complementario.
 
 \pagebreak\section{Situaci\'{o}n 7}
 ~\\ Para comparar los tres estimadores propuestos para el CV, se genero una poblacion para cada distribucion (normal, gamma y uniforme) y se obtuvieron 5000 muestras aleatorias para cada uno de los distintos tama\~{n}os de muestra (5,10,20,30,...,100). Las poblaciones sobre las cuales se obtuvieron las muestras fueron definidas de la siguiente manera:
