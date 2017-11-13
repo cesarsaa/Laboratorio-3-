@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.9.23)  13 NOV 2017 14:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.9.23)  13 NOV 2017 15:25
 entering extended mode
 **./Plantilla_TrabajoEscrito.tex
 (Plantilla_TrabajoEscrito.tex
@@ -1270,12 +1270,12 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 424.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 424.
- <Figuras/Grafico4.png, id=218, 309.40594pt x 259.7203pt>
+ <Figuras/Grafico4.png, id=218, 344.03531pt x 255.20343pt>
 File: Figuras/Grafico4.png Graphic file (type png)
 
 <use Figuras/Grafico4.png>
 Package pdftex.def Info: Figuras/Grafico4.png used on input line 444.
-(pdftex.def)             Requested size: 284.52756pt x 238.85838pt.
+(pdftex.def)             Requested size: 284.52756pt x 211.05945pt.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 450.
 Package babel Info: Redefining spanish shorthand >>
@@ -1338,12 +1338,12 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 469.
  [21]
-<Figuras/Grafico5.png, id=229, 276.03125pt x 226.8475pt>
+<Figuras/Grafico5.png, id=229, 328.22626pt x 245.91875pt>
 File: Figuras/Grafico5.png Graphic file (type png)
 
 <use Figuras/Grafico5.png>
 Package pdftex.def Info: Figuras/Grafico5.png used on input line 474.
-(pdftex.def)             Requested size: 284.52756pt x 233.85283pt.
+(pdftex.def)             Requested size: 284.52756pt x 213.18208pt.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 481.
 Package babel Info: Redefining spanish shorthand >>
@@ -1549,7 +1549,7 @@ nts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 r6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:
 /Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program
  Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Plantilla_TrabajoEscrito.pdf (25 pages, 842379 bytes).
+Output written on Plantilla_TrabajoEscrito.pdf (25 pages, 844183 bytes).
 PDF statistics:
  321 PDF objects out of 1000 (max. 8388607)
  64 named destinations out of 1000 (max. 500000)
