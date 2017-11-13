@@ -256,7 +256,39 @@
 \subsection{Punto c.}
 
 \pagebreak\section{Situaci\'{o}n 5}
+~\\ Como las muestras de las b\'{a}sculas estan relacionadas, ya que una de ellas tiene sus medidas certificadas mientras que la otra se deben verificar. Entonces para encontrar un intervalo de confianza   debemos usar la estimaci\'{o}n para la diferencia de medias para muestras relacionadas.
+~\\ La formula que tenemos para este tipo de estimaci\'{o}n es:
 
+~\\ $IC(\mu_{1}-\mu_{2} )_{(1-\alpha)\%}=(\bar{x}_{1} - \bar{x}_{2}) \pm t_{(n_{1}+ n_{2} -2 ; 1-\frac{\alpha}{2})}S{p}\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$ \\
+
+
+~\\ En este tipo de intervalo de confianza,  se basa en la diferencia entre cada uno de los valores de las bascula en la cual se quiere verificar su estado de calibracion con respecto a la b\'{a}scula que se encuentra certificada, se tienen los siguientes valores:
+ 
+~\\ \begin{center}
+ \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline 
+\rule[-1ex]{0pt}{2.5ex} B\'{A}SCULA 1 & 11.23 & 14.36 & 8.33 & 10.5 & 23.42 & 9.15 & 13.47 & 6.47 & 12.4 & 19.38 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} B\'{A}SCULA 2 & 11.27 & 14.41 & 8.35 & 10.52 & 23.41 & 9.17 & 13.52 & 6.46 & 12.45 & 19.35 \\ 
+\hline 
+
+\end{tabular} 
+\end{center}
+
+~\\ Encontramos que: 
+
+~\\$\bar{x}_{1}=12.871$ y $\bar{x}_{2}=12.891$
+
+~\\$S^2{x}_{1}=26.687$ y $S^2{x}_{2}=26.593$\\
+~\\$S{x}_{1}=5.166$ y $S{x}_{2}=5.156$\\
+~\\ $1-\alpha=0.98$ ,  $\alpha= 0.02$\\
+
+~\\ Ahora, reemplazando en la formula para hallar el intervalo de confianza, nos queda:
+~\\ $IC(\mu_{1}-\mu_{2} )_{(1-\alpha)\%}=( 12.871 - 12.891) \pm t_{(18 ;0.99)}(5.16)\sqrt{\frac{1}{10}+\frac{1}{10}}$ \\
+~\\ $IC(\mu_{D})_{98\%}=[-0.02 \pm 2.552 (5.16) \frac{1}{\sqrt{5}}]$
+~\\ $IC(\mu_{D})_{98\%}=[-5.91 ; 5.87 ]$
+
+~\\ Con un nivel de confianza del $98\%$ se puede decir que la bascula 1 con respecto a la bascula 2 obtiene un buen rendieminto 
 
 
 \pagebreak\section{Situaci\'{o}n 6}
