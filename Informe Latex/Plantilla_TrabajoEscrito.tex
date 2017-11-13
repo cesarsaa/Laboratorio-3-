@@ -84,19 +84,19 @@
  
 % Desarrollo de los contenidos del documento
 \pagebreak\section{Situaci\'{o}n 1}
-~\\ Se generaron 5000 muestras aleatorias de tama\~{n}o n=10, de una poblacion normal con parametros $\mu=5$ y $\sigma=1$ y para cada una de las muestras, se encontro un intervalo de confianza para la media y la varianza respectivamente, con una confianza del $95\%$.
+~\\ Se generaron 5000 muestras aleatorias de tama\~{n}o n=10, de una poblaci\'{o}n normal con par\'{a}metros $\mu=5$ y $\sigma=1$ y para cada una de las muestras, se encontr\'{o} un intervalo de confianza para la media y la varianza respectivamente, con una confianza del $95\%$.
 ~\\ \textbf{Para la media:}
 ~\\Nos arrojo que el porcentaje de intervalos que atrapan la verdadera media es: $95.22\%$
 ~\\ Y la longitud promedio o esperada de cada intervalo fue hallada como: $\sum\limits_{i=1}^{5000}\frac{(LS_{i}-LI_{i})}{5000}$ lo que nos arrojo un resultado de 1.2395.
 
-~\\El porcentaje de intervalos que atrapan la verdadera media tiene mucho sentido, ya que, al trabajar con una confianza del $95\%$, estamos diciendo que el $95\%$ de las veces que se repita el experimento (en este caso que se obtenga una muestra distinta de la misma poblacion), el verdadero valor de la media caera en el intervalo obtenido. Como obtuvimos un porcentaje del $95.22\%$, nos indica que el $95.22\%$ de las veces que se repitio el experimento (remuestrear y obtener el IC para la media), la verdadera media cayo en el intervalo encontrado.
+~\\El porcentaje de intervalos que atrapan la verdadera media tiene mucho sentido, ya que, al trabajar con una confianza del $95\%$, estamos diciendo que el $95\%$ de las veces que se repita el experimento (en este caso que se obtenga una muestra distinta de la misma poblaci\'{o}n), el verdadero valor de la media caer\'{a} en el intervalo obtenido. Como obtuvimos un porcentaje del $95.22\%$, nos indica que el $95.22\%$ de las veces que se repiti\'{o} el experimento (remuestrear y obtener el IC para la media), la verdadera media cayo en el intervalo encontrado.
 
-~\\ Con respecto a la longitud promedio, esta nos arroja la amplitud que tiene aproximadamente cada intervalo. En este caso, todos los intervalos tienen exactamente la misma longitud, ya que utilizamos la estimacion cuando $\sigma$ es conocida, y en este tipo de estimacion, la parte que se le suma y se le resta a la media muestral para hallar el intervalo de confianza, no depende de los datos. esa parte es $\pm Z_{1-\frac{\alpha}{2}}\cdot\frac{\sigma}{\sqrt{n}}$. Entonces,en este caso, el 1.2395 que nos arrojo la longitud promedio,nos dice que cada uno de los 5000 intervalos tiene una longitud de 1.2395.
+~\\ Con respecto a la longitud promedio, esta nos arroja la amplitud que tiene aproximadamente cada intervalo. En este caso, todos los intervalos tienen exactamente la misma longitud, ya que utilizamos la estimaci\'{o}n cuando $\sigma$ es conocida, y en este tipo de estimaci\'{o}n, la parte que se le suma y se le resta a la media muestral para hallar el intervalo de confianza, no depende de los datos. esa parte es $\pm Z_{1-\frac{\alpha}{2}}\cdot\frac{\sigma}{\sqrt{n}}$. Entonces,en este caso, el 1.2395 que nos arrojo la longitud promedio,nos dice que cada uno de los 5000 intervalos tiene una longitud de 1.2395.
 
 ~\\ \textbf{Para la varianza:}
 \subsection{Punto a.}
 ~\\ \textbf{PARA LA MEDIA:}
-~\\ Utilizamos la siguiente tabla para ver mas facilmente la comparacion por tama\~{n}os de muestra, de la proporcion de intervalos que atrapan la verdadera media y de la longitud promedio de los intervalos.
+~\\ Utilizamos la siguiente tabla para ver mas f\'{a}cilmente la comparaci\'{o}n por tama\~{n}os de muestra, de la proporci\'{o}n de intervalos que atrapan la verdadera media y de la longitud promedio de los intervalos.
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
@@ -109,40 +109,40 @@
 \end{tabular} 
 \end{center}
 
-~\\ \pagebreak La siguiente figura nos muestra los 100 primeros intervalos con cada tama\~{n}o de muestra (10,20,50,100), ya que si elaborabamos la grafica con los 5000 intervalos estimados, no nos daba una vision clara ni comparable de lo que ocurre. 
+~\\ \pagebreak La siguiente figura nos muestra los 100 primeros intervalos con cada tama\~{n}o de muestra (10,20,50,100), ya que si elabor\'{a}bamos la gr\'{a}fica con los 5000 intervalos estimados, no nos daba una visi\'{o}n clara ni comparable de lo que ocurre. 
 ~\\ \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Punto1.png}
-        \caption{Grafica comparativa de los 100 primeros intervalos por cada tama\~{n}o de muestra}
+        \caption{Gr\'{a}fica comparativa de los 100 primeros intervalos por cada tama\~{n}o de muestra}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
 
 
 
-~\\\textbf{Representacion grafica del porcentaje de cubrimiento esperado de los intervalos de la media:}
+~\\\textbf{Representaci\'{o}n gr\'{a}fica del porcentaje de cubrimiento esperado de los intervalos de la media:}
 ~\\ \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Pa1.png}
-        \caption{Grafica del porcentaje de cubrimiento de los intervalos para $\mu$ por cada tama\~{n}o de muestra}
+        \caption{Gr\'{a}fica del porcentaje de cubrimiento de los intervalos para $\mu$ por cada tama\~{n}o de muestra}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
-~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento estan cerca del $95\%$, lo cual es logico, ya que estamos trabajando con una confianza del $95\%$, lo que nos dice que el $95\%$ de las veces que se repita el proceso (remuestrear y hallar el intervalo de confianza) la verdadera media o la media real, va a caer dentro del intervalo estimado. Ademas podemos ver que el porcentaje de cubrimiento disminuye o aumenta sin depender de el tama\~{n}o de muestra n(10,30,50,100), es decir, no se ve un patron claro de dependencia entre el tama\~{n}o de las muestras y el porcentaje de cubrimiento de los intervalos estimados.
+~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento est\'{a}n cerca del $95\%$, lo cual es l\'{o}gico, ya que estamos trabajando con una confianza del $95\%$, lo que nos dice que el $95\%$ de las veces que se repita el proceso (remuestrear y hallar el intervalo de confianza) la verdadera media o la media real, va a caer dentro del intervalo estimado. Ademas podemos ver que el porcentaje de cubrimiento disminuye o aumenta sin depender de el tama\~{n}o de muestra n(10,30,50,100), es decir, no se ve un patr\'{o}n claro de dependencia entre el tama\~{n}o de las muestras y el porcentaje de cubrimiento de los intervalos estimados.
 
 
-~\\ \textbf{Representacion grafica de la longitud esperada por intervalo para la media:}
+~\\ \textbf{Representaci\'{o}n gr\'{a}fica de la longitud esperada por intervalo para la media:}
 ~\\ \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Pa2.png}
-        \caption{Grafica de la longitud esperada de cada intervalo para $\mu$ por cada tama\~{n}o de muestra}
+        \caption{Gr\'{a}fica de la longitud esperada de cada intervalo para $\mu$ por cada tama\~{n}o de muestra}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
-~\\ En la anterior imagen observamos que la longitud mas alta es la de n=10, y no sobrepasa de 1.5, y la mas baja es la de n=100 y es de aproximadamente 0.4. Esto nos muestra que hay una correlacion lineal negativa entre el tama\~{n}o de muestra y la longitud del intervalo, es decir, mientras mayor es el tama\~{n}o de muestra n, menor es la longitud del intervalo. Lo anterior tiene mucho sentido, ya que la parte que se le suma y se le resta a la media de cada muestra, para hallar una estimacion por intervalos para la media real $\mu$ es, $Z_{(1-\alpha)}\cdot\frac{\sigma}{\sqrt{n}}$ y vemos que esta expresion es mas peque\~{n}a cuando el n aumenta, haciendo menor, la amplitud de cada intervalo.
+~\\ En la anterior imagen observamos que la longitud mas alta es la de n=10, y no sobrepasa de 1.5, y la mas baja es la de n=100 y es de aproximadamente 0.4. Esto nos muestra que hay una correlaci\'{o}n lineal negativa entre el tama\~{n}o de muestra y la longitud del intervalo, es decir, mientras mayor es el tama\~{n}o de muestra n, menor es la longitud del intervalo. Lo anterior tiene mucho sentido, ya que la parte que se le suma y se le resta a la media de cada muestra, para hallar una estimaci\'{o}n por intervalos para la media real $\mu$ es, $Z_{(1-\alpha)}\cdot\frac{\sigma}{\sqrt{n}}$ y vemos que esta expresi\'{o}n es mas peque\~{n}a cuando el n aumenta, haciendo menor, la amplitud de cada intervalo.
 
 \pagebreak \textbf{PARA LA VARIANZA:}
-~\\ Utilizamos la siguiente tabla para ver mas facilmente la comparacion por tama\~{n}os de muestra, de la proporcion de intervalos que atrapan la verdadera varianza y de la longitud promedio de los intervalos.
+~\\ Utilizamos la siguiente tabla para ver mas f\'{a}cilmente la comparaci\'{o}n por tama\~{n}os de muestra, de la proporci\'{o}n de intervalos que atrapan la verdadera varianza y de la longitud promedio de los intervalos.
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
@@ -154,31 +154,31 @@
 \hline 
 \end{tabular} 
 \end{center}
-~\\\textbf{Representacion grafica del porcentaje de cubrimiento esperado de los intervalos de la varianza:}
+~\\\textbf{Representaci\'{o}n gr\'{a}fica del porcentaje de cubrimiento esperado de los intervalos de la varianza:}
 ~\\ \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Pb1.png}
-        \caption{Grafica del porcentaje de cubrimiento de los intervalos para $\sigma^2$ por cada tama\~{n}o de muestra}
+        \caption{Gr\'{a}fica del porcentaje de cubrimiento de los intervalos para $\sigma^2$ por cada tama\~{n}o de muestra}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
-~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento de los intervalos para la varianza estan cerca del $95\%$, lo cual es logico, ya que como se explico en el punto anterior, estamos trabajando con una confianza del $95\%$, lo que nos dice que el $95\%$ de las veces que se repita el proceso (remuestrear y hallar el intervalo de confianza) la verdadera varianza o la varianza real, va a caer dentro del intervalo estimado. Ademas podemos ver que el porcentaje de cubrimiento disminuye o aumenta sin depender de el tama\~{n}o de muestra n(10,30,50,100), es decir, no se ve un patron claro de dependencia entre el tama\~{n}o de las muestras y el porcentaje de cubrimiento de los intervalos estimados para la varianza.
+~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento de los intervalos para la varianza est\'{a}n cerca del $95\%$, lo cual es l\'{o}gico, ya que como se explico en el punto anterior, estamos trabajando con una confianza del $95\%$, lo que nos dice que el $95\%$ de las veces que se repita el proceso (remuestrear y hallar el intervalo de confianza) la verdadera varianza o la varianza real, va a caer dentro del intervalo estimado. Ademas podemos ver que el porcentaje de cubrimiento disminuye o aumenta sin depender de el tama\~{n}o de muestra n(10,30,50,100), es decir, no se ve un patr\'{o}n claro de dependencia entre el tama\~{n}o de las muestras y el porcentaje de cubrimiento de los intervalos estimados para la varianza.
 
 
-\pagebreak\textbf{Representacion grafica de la longitud esperada por intervalo para la varianza:}
+\pagebreak\textbf{Representaci\'{o}n gr\'{a}fica de la longitud esperada por intervalo para la varianza:}
 ~\\ \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Pb2.png}
-        \caption{Grafica de la longitud esperada de cada intervalo para $\sigma^2$ por cada tama\~{n}o de muestra}
+        \caption{Gr\'{a}fica de la longitud esperada de cada intervalo para $\sigma^2$ por cada tama\~{n}o de muestra}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
-~\\ En esta imagen, al igual que en la de los intervalos para la media. Vemos que la longitud es mayor para los tama\~{n}os de muestra de n=10 y es menor para los tama\~{n}os de muestra de n=100, lo que nos muestra que entre estas dos variables (tama\~{n}o de muestra y longitud del intervalo) existe una correlacion lineal negativa, es decir, cuando aumenta el tama\~{n}o de muestra, disminuye la longitud de los intervalos estimados.
+~\\ En esta imagen, al igual que en la de los intervalos para la media. Vemos que la longitud es mayor para los tama\~{n}os de muestra de n=10 y es menor para los tama\~{n}os de muestra de n=100, lo que nos muestra que entre estas dos variables (tama\~{n}o de muestra y longitud del intervalo) existe una correlaci\'{o}n lineal negativa, es decir, cuando aumenta el tama\~{n}o de muestra, disminuye la longitud de los intervalos estimados.
 
 \pagebreak\subsection{Punto b.}
-~\\ Para este punto se simulo una poblacion exponencial con parametro $\lambda=\frac{1}{5}$ y de alli, se extrayeron las respectivas muestras de los distintos tama\~{n}os.
+~\\ Para este punto se simulo una poblaci\'{o}n exponencial con par\'{a}metro $\lambda=\frac{1}{5}$ y de all\'{i}, se extrajeron las respectivas muestras de los distintos tama\~{n}os.
 ~\\ \textbf{PARA LA MEDIA:}
-~\\ Utilizamos la siguiente tabla para ver mas facilmente la comparacion por tama\~{n}os de muestra, de la proporcion de intervalos que atrapan la verdadera media y de la longitud promedio de los intervalos para la poblacion exponencial.
+~\\ Utilizamos la siguiente tabla para ver mas f\'{a}cilmente la comparaci\'{o}n por tama\~{n}os de muestra, de la proporci\'{o}n de intervalos que atrapan la verdadera media y de la longitud promedio de los intervalos para la poblaci\'{o}n exponencial.
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
@@ -190,28 +190,28 @@
 \hline 
 \end{tabular} 
 \end{center}
-~\\\textbf{Representacion grafica del porcentaje de cubrimiento esperado de los intervalos para la media de una poblacion exponencial:}
+~\\\textbf{Representaci\'{o}n gr\'{a}fica del porcentaje de cubrimiento esperado de los intervalos para la media de una poblaci\'{o}n exponencial:}
 ~\\ \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Pc1.png}
-        \caption{Grafica del porcentaje de cubrimiento de los intervalos para $\mu$ por cada tama\~{n}o de muestra, para la poblaci\'{o}n exponencial}
+        \caption{Gr\'{a}fica del porcentaje de cubrimiento de los intervalos para $\mu$ por cada tama\~{n}o de muestra, para la poblaci\'{o}n exponencial}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
-~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento son del $0\%$, al contrario que en la poblacion normal, en la cual todos los intervalos estan cerca del $95\%$. Esto se debe a que la estimacion por intervalos que estamos aplicando, solo se utiliza cuando la poblacion es normal. Es decir, estas formulas no sirven para estimar $\mu$ de una poblacion no normal. Como se ve en la imagen, nos arroja intervalos que no tienen ningun sentido con la poblacion que estamos trabajando (en este caso, la exponencial) y que no atrapan el verdadero valor de $\mu$.
+~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento son del $0\%$, al contrario que en la poblaci\'{o}n normal, en la cual todos los intervalos est\'{a}n cerca del $95\%$. Esto se debe a que la estimaci\'{o}n por intervalos que estamos aplicando, solo se utiliza cuando la poblaci\'{o}n es normal. Es decir, estas formulas no sirven para estimar $\mu$ de una poblaci\'{o}n no normal. Como se ve en la imagen, nos arroja intervalos que no tienen ning\'{u}n sentido con la poblaci\'{o}n que estamos trabajando (en este caso, la exponencial) y que no atrapan el verdadero valor de $\mu$.
 
-\pagebreak\textbf{Representacion grafica de la longitud de los intervalos para la media de una poblacion exponencial:}
+\pagebreak\textbf{Representaci\'{o}n gr\'{a}fica de la longitud de los intervalos para la media de una poblaci\'{o}n exponencial:}
 ~\\ \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/P1bM.png}
-        \caption{Grafica de la longitud de los intervalos para $\mu$ por cada tama\~{n}o de muestra, para la poblaci\'{o}n exponencial}
+        \caption{Gr\'{a}fica de la longitud de los intervalos para $\mu$ por cada tama\~{n}o de muestra, para la poblaci\'{o}n exponencial}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
-~\\ En esta imagen podemos ver que las longitudes de los intervalos, son muy peque\~{n}as (la maxima es de aproximadamente 0.25), lo cual nos indica que esos intervalos probablemente no tengan una alta confianza, ya que la probabilidad de que no encierren la verdadera media es muy alta. Ademas vemos que a medida que aumentan los tama\~{n}os de muestra, disminuye aun mas la longitud del intervalo, tendiendo casi a 0, volviendose asi, un estimador practicamente puntual, el cual por obvias razones no va a contener el verdadero valor del parametro. 
+~\\ En esta imagen podemos ver que las longitudes de los intervalos, son muy peque\~{n}as (la m\'{a}xima es de aproximadamente 0.25), lo cual nos indica que esos intervalos probablemente no tengan una alta confianza, ya que la probabilidad de que no encierren la verdadera media es muy alta. Ademas vemos que a medida que aumentan los tama\~{n}os de muestra, disminuye aun mas la longitud del intervalo, tendiendo casi a 0, volvi\'{e}ndose as\'{i}, un estimador pr\'{a}cticamente puntual, el cual por obvias razones no va a contener el verdadero valor del par\'{a}metro. 
 
 \pagebreak\textbf{PARA LA VARIANZA:}
-~\\ Utilizamos la siguiente tabla para ver mas facilmente la comparacion por tama\~{n}os de muestra, de la proporcion de intervalos que atrapan la verdadera varianza y de la longitud promedio de los intervalos para la poblacion exponencial.
+~\\ Utilizamos la siguiente tabla para ver mas f\'{a}cilmente la comparaci\'{o}n por tama\~{n}os de muestra, de la proporci\'{o}n de intervalos que atrapan la verdadera varianza y de la longitud promedio de los intervalos para la poblaci\'{o}n exponencial.
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline 
@@ -223,34 +223,34 @@
 \hline 
 \end{tabular} 
 \end{center}
-~\\\textbf{Representacion grafica del porcentaje de cubrimiento esperado de los intervalos para la varianza de una poblacion exponencial:}
+~\\\textbf{Representaci\'{o}n gr\'{a}fica del porcentaje de cubrimiento esperado de los intervalos para la varianza de una poblaci\'{o}n exponencial:}
 ~\\ \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Pc2.png}
-        \caption{Grafica del porcentaje de cubrimiento de los intervalos para $\sigma^2$ por cada tama\~{n}o de muestra, para la poblaci\'{o}n exponencial}
+        \caption{Gr\'{a}fica del porcentaje de cubrimiento de los intervalos para $\sigma^2$ por cada tama\~{n}o de muestra, para la poblaci\'{o}n exponencial}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
-~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento son del $0\%$, al contrario que en la poblacion normal, en la cual todos los intervalos estan cerca del $95\%$. Esto se debe a que la estimacion por intervalos que estamos aplicando, solo se utiliza cuando la poblacion es normal. Es decir, estas formulas no sirven para estimar $\sigma^2$ de una poblacion no normal. Como se ve en la imagen, nos arroja intervalos que no tienen ningun sentido con la poblacion que estamos trabajando (en este caso, la exponencial) y que no atrapan el verdadero valor de $\sigma^2$.
+~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento son del $0\%$, al contrario que en la poblaci\'{o}n normal, en la cual todos los intervalos est\'{a}n cerca del $95\%$. Esto se debe a que la estimaci\'{o}n por intervalos que estamos aplicando, solo se utiliza cuando la poblaci\'{o}n es normal. Es decir, estas formulas no sirven para estimar $\sigma^2$ de una poblaci\'{o}n no normal. Como se ve en la imagen, nos arroja intervalos que no tienen ning\'{u}n sentido con la poblaci\'{o}n que estamos trabajando (en este caso, la exponencial) y que no atrapan el verdadero valor de $\sigma^2$.
 
-\pagebreak\textbf{Representacion grafica de la longitud de los intervalos para la varianza de una poblacion exponencial:}
+\pagebreak\textbf{Representaci\'{o}n gr\'{a}fica de la longitud de los intervalos para la varianza de una poblaci\'{o}n exponencial:}
 ~\\ \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/P1bV.png}
-        \caption{Grafica de la longitud de los intervalos para $\sigma^2$ por cada tama\~{n}o de muestra, para la poblaci\'{o}n exponencial}
+        \caption{Gr\'{a}fica de la longitud de los intervalos para $\sigma^2$ por cada tama\~{n}o de muestra, para la poblaci\'{o}n exponencial}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
-~\\ En esta grafica, al igual que en la de para la media, vemos que las longitudes son tambien muy peque\~{n}as. y Al igual que en todas las graficas, la longitud de los intervalos tiene una correlacion lineal negativo con los tama\~{n}os de muestra. Mientras mas grande sea el tama\~{n}o de muestra la longitud tiene a cero (en este caso).
+~\\ En esta gr\'{a}fica, al igual que en la de para la media, vemos que las longitudes son tambi\'{e}n muy peque\~{n}as. y Al igual que en todas las gr\'{a}ficas, la longitud de los intervalos tiene una correlaci\'{o}n lineal negativo con los tama\~{n}os de muestra. Mientras mas grande sea el tama\~{n}o de muestra la longitud tiene a cero (en este caso).
 
-~\\\textbf{CONCLUSION GENERAL:}
-~\\ Comparando los resultados para la poblacion normal y la exponencial, podemos ver que los intervalos son eficientes y funcionales solo para los datos que provienen de una poblacion normal, ya que nos da porcentajes de cubrimiento cerca del nivel de confianza asignado. En cambio, los intervalos calculados para los datos que provienen de una poblacion exponencial tienen un porcentaje de cubrimiento de 0 para cada uno de los tama\~{n}os de muestra, y para los dos parametros ($\mu$ y $\sigma^2$).
-Entonces concluimos que las formulas que tenemos para este tipo de estimacion, solo funcionan para datos que son provenientes de una poblacion normal, ya que si lo aplicamos a datos muestreados de poblaciones diferentes, nos arroja intervalos que no tienen ningun sentido, y que no nos sirven en realidad como estimacion de los parametros.
+~\\\textbf{CONCLUSI\'{O}N GENERAL:}
+~\\ Comparando los resultados para la poblaci\'{o}n normal y la exponencial, podemos ver que los intervalos son eficientes y funcionales solo para los datos que provienen de una poblaci\'{o}n normal, ya que nos da porcentajes de cubrimiento cerca del nivel de confianza asignado. En cambio, los intervalos calculados para los datos que provienen de una poblaci\'{o}n exponencial tienen un porcentaje de cubrimiento de 0 para cada uno de los tama\~{n}os de muestra, y para los dos par\'{a}metros ($\mu$ y $\sigma^2$).
+Entonces concluimos que las formulas que tenemos para este tipo de estimaci\'{o}n, solo funcionan para datos que son provenientes de una poblaci\'{o}n normal, ya que si lo aplicamos a datos muestreados de poblaciones diferentes, nos arroja intervalos que no tienen ning\'{u}n sentido, y que no nos sirven en realidad como estimaci\'{o}n de los par\'{a}metros.
 \pagebreak\section{Situaci\'{o}n 2}
-~\\ Para darnos cuenta que en realidad la mayoria de personas aprueba el proyecto de fluoracion del agua, debemos encontrar un intervalo de confianza de la proporcion de personas que estan a favor, y ver si este esta por encima del 0.5.
+~\\ Para darnos cuenta que en realidad la mayor\'{i}a de personas aprueba el proyecto de fluoraci\'{o}n del agua, debemos encontrar un intervalo de confianza de la proporci\'{o}n de personas que est\'{a}n a favor, y ver si este esta por encima del 0.5.
 ~\\ Entonces. Tomando los datos del enunciado tenemos:
-~\\ $n=200$, $\hat{P}=\frac{110}{200}=0.55$ (Proporcicion de personas a favor), $\alpha=0.01$ entonces $1-\alpha=0.99$
-~\\ Ahora, para encontrar un intervalo de confianza para la proporcion, aplicamos la siguiente formula:
+~\\ $n=200$, $\hat{P}=\frac{110}{200}=0.55$ (Proporci\'{o}n de personas a favor), $\alpha=0.01$ entonces $1-\alpha=0.99$
+~\\ Ahora, para encontrar un intervalo de confianza para la proporci\'{o}n, aplicamos la siguiente formula:
 
 ~\\ $IC(P)_{(1-\alpha)\%}=\left[\hat{P}-Z_{1-\frac{\alpha}{2}}\sqrt{\frac{\hat{P}(1-\hat{P}}{n}};\hat{P}+Z_{1-\frac{\alpha}{2}}\sqrt{\frac{\hat{P}(1-\hat{P}}{n}}\right]$
 
@@ -262,45 +262,45 @@ Entonces concluimos que las formulas que tenemos para este tipo de estimacion, s
 
 ~\\ $IC(P)_{99\%}=[0.4594 ; 0.6406]$
 
-~\\ \textbf{INTERPRETACION:}
+~\\ \textbf{INTERPRETACI\'{O}N:}
  \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Grafico1.png}
-        \caption{Interpretacion intervalo para proporciones}
+        \caption{Interpretaci\'{o}n intervalo para proporciones}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
 
-~\\ Como asignamos una confianza del $99\%$ a nuestro intervalo, decimos que el $99\%$ de las veces que se repita el experimento, la proporcion real de personas que estan a favor de que se agregue fluoruro de sodio al agua va a caer en dicho intervalo (entre 0.4594 y 0.6406). Ahora, observando la grafica, podemos ver que en el intervalo esta contenida la probabilidad de 0.5, por lo tanto, la muestra no nos da evidencia para decir que la mayoria de personas aprueba el proyecto de fluoracion.
+~\\ Como asignamos una confianza del $99\%$ a nuestro intervalo, decimos que el $99\%$ de las veces que se repita el experimento, la proporci\'{o}n real de personas que est\'{a}n a favor de que se agregue fluoruro de sodio al agua va a caer en dicho intervalo (entre 0.4594 y 0.6406). Ahora, observando la gr\'{a}fica, podemos ver que en el intervalo esta contenida la probabilidad de 0.5, por lo tanto, la muestra no nos da evidencia para decir que la mayor\'{i}a de personas aprueba el proyecto de fluoraci\'{o}n.
 
 \pagebreak\section{Situaci\'{o}n 3}
 \subsection{Punto a.}
  \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Grafico2.png}
-        \caption{Grafico de puntos y lineas por negocio de unidades vendidas, antes y despues de la publicidad}
+        \caption{Gr\'{a}fico de puntos y lineas por negocio de unidades vendidas, antes y despu\'{e}s de la publicidad}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
 
-~\\ En el analisis exploratorio de datos que se elaboro, encontramos que la mejor grafica para mostrar la efectividad de la campana publicitaria fue la grafica de puntos y lineas. El eje x son cada una de las sucursales o negocios, y el eje y son las unidades vendidas. La linea negra representa las unidades que se vendian en dichos negocios antes de la campana publicitaria, y la roja representa las unidades vendidas despues de la campana.
-~\\ Podemos observar que en solo dos de los negocios la linea negra esta por encima de la blanca, es decir, se vendieron mas articulos antes de la campana que despues de ella; en el resto de negocios (10 negocios)la linea roja esta por encima de la negra, es decir,se vendieron mas articulos despues de la campana que antes de ella. Ademas, si miramos detalladamente las diferencias en los negocios en los cuales la linea negra esta por encima de la roja son de tan solo una unidad vendida, en cambio en los negocios en los cuales la linea roja esta por encima de la negra, hay diferencia hasta de 7 unidades vendidas.
-~\\ \textbf{Concluimos entonces, que con el analisis exploratorio y con la grafica obtenida, la campana publicitaria si es efectiva.}
+~\\ En el an\'{a}lisis exploratorio de datos que se elaboro, encontramos que la mejor gr\'{a}fica para mostrar la efectividad de la campa\~{n}a publicitaria fue la gr\'{a}fica de puntos y lineas. El eje x son cada una de las sucursales o negocios, y el eje y son las unidades vendidas. La linea negra representa las unidades que se vend\'{i}an en dichos negocios antes de la campa\~{n}a publicitaria, y la roja representa las unidades vendidas despu\'{e}s de la campa\~{n}a.
+~\\ Podemos observar que en solo dos de los negocios la linea negra esta por encima de la blanca, es decir, se vendieron mas art\'{i}culos antes de la campa\~{n}a que despu\'{e}s de ella; en el resto de negocios (10 negocios)la linea roja esta por encima de la negra, es decir,se vendieron mas art\'{i}culos despu\'{e}s de la campa\~{n}a que antes de ella. Ademas, si miramos detalladamente las diferencias en los negocios en los cuales la linea negra esta por encima de la roja son de tan solo una unidad vendida, en cambio en los negocios en los cuales la linea roja esta por encima de la negra, hay diferencia hasta de 7 unidades vendidas.
+~\\ \textbf{Concluimos entonces, que con el an\'{a}lisis exploratorio y con la gr\'{a}fica obtenida, la campa\~{n}a publicitaria si es efectiva.}
 
 \subsection{Punto b.}
-~\\ Como las muestras estan relacionadas, ya que son tomadas antes y despues de un tratamiento (en este caso la campana publicitaria) a la misma poblacion. Entonces para encontrar este intervalo debemos usar la estimacion para la diferencia de medias para muestras relacionadas.
-~\\ La formula que tenemos para este tipo de estimacion es:
+~\\ Como las muestras est\'{a}n relacionadas, ya que son tomadas antes y despu\'{e}s de un tratamiento (en este caso la campa\~{n}a publicitaria) a la misma poblaci\'{o}n. Entonces para encontrar este intervalo debemos usar la estimaci\'{o}n para la diferencia de medias para muestras relacionadas.
+~\\ La formula que tenemos para este tipo de estimaci\'{o}n es:
 
 ~\\ $IC(\mu_{D})_{(1-\alpha)\%}=\bar{d} \pm t_{(1-\frac{\alpha}{2};n-1)}\cdot\frac{Sd}{\sqrt{n}}$
 
-~\\ En este tipo de intervalo de confianza, todo se basa en la diferencia entre cada uno de los valores del antes y despes del tratamiento, por tanto, para mayor comodida encontramos las diferencias y las a\~{n}adimos a la tabla:
+~\\ En este tipo de intervalo de confianza, todo se basa en la diferencia entre cada uno de los valores del antes y despu\'{e}s del tratamiento, por tanto, para mayor comodidad encontramos las diferencias y las a\~{n}adimos a la tabla:
  
 ~\\ \begin{center}
  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
 \hline 
 \rule[-1ex]{0pt}{2.5ex} ANTES & 12 & 10 & 15 & 8 & 19 & 14 & 12 & 21 & 16 & 11 & 8 & 15 \\ 
 \hline 
-\rule[-1ex]{0pt}{2.5ex} DESPUES & 11 & 11 & 17 & 9 & 21 & 13 & 16 & 25 & 20 & 18 & 10 & 17 \\ 
+\rule[-1ex]{0pt}{2.5ex} DESPU\'{E}S & 11 & 11 & 17 & 9 & 21 & 13 & 16 & 25 & 20 & 18 & 10 & 17 \\ 
 \hline 
 \rule[-1ex]{0pt}{2.5ex} DIFERENCIA & 1 & -1 & -2 & -1 & -2 & 1 & -4 & -4 & -4 & -7 & -2 & -2 \\ 
 \hline 
@@ -314,7 +314,7 @@ Entonces concluimos que las formulas que tenemos para este tipo de estimacion, s
 ~\\ $IC(\mu_{D})_{95\%}=[-2.25 \pm 2.2009 \cdot \frac{2.2613}{\sqrt{12}}]$
 ~\\ $IC(\mu_{D})_{95\%}=[-3.6880 ; -0.8119]$
 
-~\\ \textbf{En conclusion, un intervalo de confianza para la diferencia de medias de unidades vendidas durante un mes antes y un mes despues de la campa\~{n}a es (-3.6880 ; -0.8119).}
+~\\ \textbf{En conclusi\'{o}n, un intervalo de confianza para la diferencia de medias de unidades vendidas durante un mes antes y un mes despu\'{e}s de la campa\~{n}a es (-3.6880 ; -0.8119).}
 
 \pagebreak
 \subsection{Punto c.}
@@ -322,14 +322,14 @@ Entonces concluimos que las formulas que tenemos para este tipo de estimacion, s
 \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Grafico3.png}
-        \caption{Interpretacion intervalo para diferencia de medias en muestras relacionadas}
+        \caption{Interpretaci\'{o}n intervalo para diferencia de medias en muestras relacionadas}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
 
-~\\ Como asignamos una confianza del $95\%$ a nuestro intervalo, quiere decir que el $95\%$ de las veces que se repita el experimento, la diferencia real de las medias va a caer entre (-3.6880 y -0.8119). Al ver la imagen, observamos que el intervalo obtenido no contiene al cero y ademas esta debajo de el, lo que nos indica que $\mu_2>\mu_1$, y esto nos dice que el promedio de ventas despues de la campa\~{n}a publicitaria es mayor que el promedio de ventas antes de la campa\~{n}a. 
+~\\ Como asignamos una confianza del $95\%$ a nuestro intervalo, quiere decir que el $95\%$ de las veces que se repita el experimento, la diferencia real de las medias va a caer entre (-3.6880 y -0.8119). Al ver la imagen, observamos que el intervalo obtenido no contiene al cero y ademas esta debajo de el, lo que nos indica que $\mu_2>\mu_1$, y esto nos dice que el promedio de ventas despu\'{e}s de la campa\~{n}a publicitaria es mayor que el promedio de ventas antes de la campa\~{n}a. 
 
-~\\ \textbf{En conclusion, podemos decir que la campa\~{n}a publicitaria es efectiva ya que aumenta el promedio de ventas.}
+~\\ \textbf{En conclusi\'{o}n, podemos decir que la campa\~{n}a publicitaria es efectiva ya que aumenta el promedio de ventas.}
 
 \pagebreak\section{Situaci\'{o}n 4}
 ~\\ Dada una muestra de tama\~{n}o n de una poblaci\'{o}n con una proporci\'{o}n p (desconocida) y
@@ -337,7 +337,7 @@ la proporci\'{o}n de muestra estimada  $\hat{p}$ (conocida).
 
 \subsection{Punto a.}
 
-~\\ Se construye una funcion para calcular el intervalo de confianza para p con un nivel de significancia $\alpha$. La cual nos arroja un vector de dos elementos: el primero es el limite inferior del IC, y el segundo es el limite superior del IC.
+~\\ Se construye una funci\'{o}n para calcular el intervalo de confianza para p con un nivel de significancia $\alpha$. La cual nos arroja un vector de dos elementos: el primero es el limite inferior del IC, y el segundo es el limite superior del IC.
 
 ~\\ $IC(P)_{(1-\alpha)\%}=\left[\hat{P}-Z_{1-\frac{\alpha}{2}}\sqrt{\frac{\hat{P}(1-\hat{P}}{n}};\hat{P}+Z_{1-\frac{\alpha}{2}}\sqrt{\frac{\hat{P}(1-\hat{P}}{n}}\right]$
 
@@ -352,12 +352,12 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 ~\\ n=40, $\hat{P}=0.85$, con un nivel de confianza del $95\%$ es de: $[0.8070307 ;0.9929693 ]$
 ~\\ De las 5000 simulaciones , 4689 contienen la verdadera proporci\'{o}n de poblaci\'{o}n P(0.85), teniendo entonces una cobertura del $93.78\%$
 
-~\\De lo que se puede decir del intervalo es que al tener una longitud angosta lo hace mas preciso pues de esta forma no tendra tanta variabilidad lo que colleva a tener un porcentaje de cobertura bastante alto
+~\\De lo que se puede decir del intervalo es que al tener una longitud angosta lo hace mas preciso pues de esta forma no tendr\'{a} tanta variabilidad lo que conlleva a tener un porcentaje de cobertura bastante alto
 
 
 \subsection{Punto c.}
 
-~\\El intervalo de confianza para: n=10,20,30,50,100, se podran visualizar los resultados en la siguiente tabla, la cual contiene el tama\~{n}o de n,el intervalo de confianza, la longitud del intervalo, el contador que hace referencia al numero de veces en que de las 5000 simulaciones contienen la verdadera proporci\'{o}n de poblaci\'{o}n P(es decir con p=0.85),por ultimo la tabla contiene el porcentaje de cobertura del intervalo de confianza.
+~\\El intervalo de confianza para: n=10,20,30,50,100, se podr\'{a}n visualizar los resultados en la siguiente tabla, la cual contiene el tama\~{n}o de n,el intervalo de confianza, la longitud del intervalo, el contador que hace referencia al numero de veces en que de las 5000 simulaciones contienen la verdadera proporci\'{o}n de poblaci\'{o}n P(es decir con p=0.85),por ultimo la tabla contiene el porcentaje de cobertura del intervalo de confianza.
 
 
 ~\\ \begin{center}
@@ -380,18 +380,18 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 \end{center}
 
 
-~\\ Haciendo la variaci\'{o}n en el n se puede concluir que a medida que este se va volviendo m\'{a}s grande el intervalo de confianza se va acotando, es decir, que este se va volviendo m\'{a}s angosto, lo que significa que se hace mas preciso, ya que no hay tanta variabilidad en los intervalos, dando asi porcentajes de cobertura bastante altos
+~\\ Haciendo la variaci\'{o}n en el n se puede concluir que a medida que este se va volviendo m\'{a}s grande el intervalo de confianza se va acotando, es decir, que este se va volviendo m\'{a}s angosto, lo que significa que se hace mas preciso, ya que no hay tanta variabilidad en los intervalos, dando as\'{i} porcentajes de cobertura bastante altos
 
 
 
 \pagebreak\section{Situaci\'{o}n 5}
-~\\ Como las muestras de las b\'{a}sculas estan relacionadas, ya que una de ellas tiene sus medidas certificadas mientras que la otra se deben verificar. Entonces para encontrar un intervalo de confianza   debemos usar la estimaci\'{o}n para la diferencia de medias para muestras relacionadas.
+~\\ Como las muestras de las b\'{a}sculas est\'{a}n relacionadas, ya que una de ellas tiene sus medidas certificadas mientras que la otra se deben verificar. Entonces para encontrar un intervalo de confianza   debemos usar la estimaci\'{o}n para la diferencia de medias para muestras relacionadas.
 ~\\ La formula que tenemos para este tipo de estimaci\'{o}n es:
 
 ~\\ $IC(\mu_{1}-\mu_{2} )_{(1-\alpha)\%}=(\bar{x}_{1} - \bar{x}_{2}) \pm t_{(n_{1}+ n_{2} -2 ; 1-\frac{\alpha}{2})}S{p}\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}$ \\
 
 
-~\\ En este tipo de intervalo de confianza,  se basa en la diferencia entre cada uno de los valores de las bascula en la cual se quiere verificar su estado de calibracion con respecto a la b\'{a}scula que se encuentra certificada, se tienen los siguientes valores:
+~\\ En este tipo de intervalo de confianza,  se basa en la diferencia entre cada uno de los valores de las bascula en la cual se quiere verificar su estado de calibraci\'{o}n con respecto a la b\'{a}scula que se encuentra certificada, se tienen los siguientes valores:
  
 ~\\ \begin{center}
  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
@@ -417,15 +417,15 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 ~\\ $IC(\mu_{D})_{98\%}=[-0.02 \pm 2.552 (5.16) \frac{1}{\sqrt{5}}]$
 ~\\ $IC(\mu_{D})_{98\%}=[-5.91 ; 5.87 ]$
 
-~\\ Con un nivel de confianza del $98\%$ se puede decir que la bascula 1 con respecto a la bascula 2 obtiene un buen rendieminto 
+~\\ Con un nivel de confianza del $98\%$ se puede decir que la bascula 1 con respecto a la bascula 2 obtiene un buen rendimiento 
 
 
 \pagebreak\section{Situaci\'{o}n 6}
 \subsection{Punto a.}
-~\\ Para darnos cuenta si las varianzas se puden considerar como iguales o diferentes, debemos encontrar un intervalo de confianza para la razon de las varianzas.
-~\\ Extrayendo la informacion del enunciado, tenemos:
+~\\ Para darnos cuenta si las varianzas se pueden considerar como iguales o diferentes, debemos encontrar un intervalo de confianza para la raz\'{o}n de las varianzas.
+~\\ Extrayendo la informaci\'{o}n del enunciado, tenemos:
 ~\\ $1-\alpha=0.98$ entonces $\alpha=0.02$
-~\\ Ahora, la formula para obtener un intervalo de confianza para la razon de varianzas es:
+~\\ Ahora, la formula para obtener un intervalo de confianza para la raz\'{o}n de varianzas es:
 
 ~\\ $IC(\frac{\sigma_1^{2}}{\sigma_2^{2}})_{(1-\alpha)\%}=\left[\frac{S_{1} ^{2}}{S_{2} ^{2}}\cdot F_{(\frac{\alpha}{2},n_{2}-1,n_{1}-1)}  ; \frac{S_{1} ^{2}}{S_{2} ^{2}}\cdot F_{(1-\frac{\alpha}{2},n_{2}-1,n_{1}-1)} \right]$
 
@@ -438,20 +438,20 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 ~\\ $IC(\frac{\sigma_1^{2}}{\sigma_2^{2}})_{98\%}=[1.8138\cdot0.14884  ;  1.8138\cdot5.61287]$
 
 ~\\ $IC(\frac{\sigma_1^{2}}{\sigma_2^{2}})_{98\%}=[0.26997 ; 10.18098]$
-~\\ Para interpretar mas facilmente el intervalo obtenido, hicimos la siguiente grafica:
+~\\ Para interpretar mas f\'{a}cilmente el intervalo obtenido, hicimos la siguiente gr\'{a}fica:
 \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Grafico4.png}
-        \caption{Interpretacion intervalo para la razon de varianzas}
+        \caption{Interpretaci\'{o}n intervalo para la raz\'{o}n de varianzas}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
-~\\ Como asignamos una confianza del $98\%$ quiere decir, que el $98\%$ de las veces que se repita el experimento con las mismas condiciones, la razon de varianzas poblacionales va a estar entre (0.26997 y 10.18098). Si nos fijamos en la imagen, vemos que el intervalo obtenido contiene al 1. Entonces concluimos que no se pueden considerar las varianzas poblacionales como diferentes, ya que la razon de varianzas poblacionales puede ser 1.
+~\\ Como asignamos una confianza del $98\%$ quiere decir, que el $98\%$ de las veces que se repita el experimento con las mismas condiciones, la raz\'{o}n de varianzas poblacionales va a estar entre (0.26997 y 10.18098). Si nos fijamos en la imagen, vemos que el intervalo obtenido contiene al 1. Entonces concluimos que no se pueden considerar las varianzas poblacionales como diferentes, ya que la raz\'{o}n de varianzas poblacionales puede ser 1.
 \subsection{Punto b.}
-~\\ Para recomendar o no el uso del revestimiento como mecanismo complementario, encontraremos un intervalo de confianza para diferencia de medias, y asi darnos cuenta si la resistencia promedio de las tuberias aumento, disminuyo, o se mantuvo igual.
-~\\ Como informacion tenemos: $\bar{x_1}=2902.8$ , $\bar{x_2}=3108.125$, $S_{1}^2=76875.9550$ y $S_{2}^2=42382.41037$
+~\\ Para recomendar o no el uso del revestimiento como mecanismo complementario, encontraremos un intervalo de confianza para diferencia de medias, y as\'{i} darnos cuenta si la resistencia promedio de las tuber\'{i}as aumento, disminuyo, o se mantuvo igual.
+~\\ Como informaci\'{o}n tenemos: $\bar{x_1}=2902.8$ , $\bar{x_2}=3108.125$, $S_{1}^2=76875.9550$ y $S_{2}^2=42382.41037$
 
-~\\ Debemos aplicar la estimacion para diferencia de medias con $\sigma_{1}^2$ y $\sigma_{2}^2$ desconocidas pero iguales, ya que en el punto anterior, mostramos que con una confianza del $98\%$ las varianzas poblacionales pueden ser iguales.
+~\\ Debemos aplicar la estimaci\'{o}n para diferencia de medias con $\sigma_{1}^2$ y $\sigma_{2}^2$ desconocidas pero iguales, ya que en el punto anterior, mostramos que con una confianza del $98\%$ las varianzas poblacionales pueden ser iguales.
 ~\\ Sustituyendo los valores en la formula, tenemos:
 
 ~\\ $IC(\mu_1 - \mu_2)_{98\%}=(2902.8-3108.125)\pm t_{(0.99;16)}\cdot Sp\sqrt{\frac{1}{10}+\frac{1}{8}}$ 
@@ -466,20 +466,20 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 ~\\ $IC(\mu_1 - \mu_2)_{98\%}=[-509.9308 ; 99.2808]$
 
 \pagebreak
-~\\ \textbf{INTERPRETACION:}
+~\\ \textbf{INTERPRETACI\'{O}N:}
 
-~\\ Para interpretar mas facilmente el intervalo obtenido, elaboramos la siguiente grafica:
+~\\ Para interpretar mas f\'{a}cilmente el intervalo obtenido, elaboramos la siguiente gr\'{a}fica:
 \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Grafico5.png}
-        \caption{Interpretacion intervalo para diferencia de medias en muestras independientes}
+        \caption{Interpretaci\'{o}n intervalo para diferencia de medias en muestras independientes}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
-~\\ Como el intervalo encontrado tiene una confianza del $98\%$, decimos que el $98\%$ de las veces que se repita el experimento en las mismas condiciones, la diferencia de medias de resistencia reales va a caer entre -509.9308 y 99.2808. Ademas, si detallamos la imagen, podemos ver que el intervalo obtenido contiene al cero, esto quiere decir que $\mu_1=\mu_2$ o son muy cercanos. Por lo que concluimos que el uso del revestimiendo no eleva la resistencia promedio de las tuberias, y no es recomendable el uso de este como mecanismo complementario.
+~\\ Como el intervalo encontrado tiene una confianza del $98\%$, decimos que el $98\%$ de las veces que se repita el experimento en las mismas condiciones, la diferencia de medias de resistencia reales va a caer entre -509.9308 y 99.2808. Ademas, si detallamos la imagen, podemos ver que el intervalo obtenido contiene al cero, esto quiere decir que $\mu_1=\mu_2$ o son muy cercanos. Por lo que concluimos que el uso del revestimiento no eleva la resistencia promedio de las tuber\'{i}as, y no es recomendable el uso de este como mecanismo complementario.
 
 \pagebreak\section{Situaci\'{o}n 7}
-~\\ Para comparar los tres estimadores propuestos para el CV, se genero una poblacion para cada distribucion (normal, gamma y uniforme) y se obtuvieron 5000 muestras aleatorias para cada uno de los distintos tama\~{n}os de muestra (5,10,20,30,...,100). Las poblaciones sobre las cuales se obtuvieron las muestras fueron definidas de la siguiente manera:
+~\\ Para comparar los tres estimadores propuestos para el CV, se genero una poblaci\'{o}n para cada distribuci\'{o}n (normal, gamma y uniforme) y se obtuvieron 5000 muestras aleatorias para cada uno de los distintos tama\~{n}os de muestra (5,10,20,30,...,100). Las poblaciones sobre las cuales se obtuvieron las muestras fueron definidas de la siguiente manera:
 ~\\ 1. $Normal(\mu=200,\sigma=\sqrt{400})$
 ~\\ 2. $Gamma(\alpha=0.5,\beta=100)$
 ~\\ 3. $Uniforme(a=200,b=600)$
@@ -487,7 +487,7 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Rplot.png}
-        \caption{Proporcion de cobertura y longitud promedio de los intervalos para $\sigma$ de la distribucion normal}
+        \caption{Proporci\'{o}n de cobertura y longitud promedio de los intervalos para $\sigma$ de la distribuci\'{o}n normal}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
@@ -495,7 +495,7 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Rplot01.png}
-        \caption{Proporcion de cobertura y longitud promedio de los intervalos para $cv$ de la distribucion normal}
+        \caption{Proporci\'{o}n de cobertura y longitud promedio de los intervalos para $cv$ de la distribuci\'{o}n normal}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
@@ -503,7 +503,7 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Rplot02.png}
-        \caption{Proporcion de cobertura y longitud promedio de los intervalos para $\sigma$ de la distribucion gamma}
+        \caption{Proporci\'{o}n de cobertura y longitud promedio de los intervalos para $\sigma$ de la distribuci\'{o}n gamma}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
@@ -511,7 +511,7 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Rplot03.png}
-        \caption{Proporcion de cobertura y longitud promedio de los intervalos para $cv$ de la distribucion gamma}
+        \caption{Proporci\'{o}n de cobertura y longitud promedio de los intervalos para $cv$ de la distribuci\'{o}n gamma}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
@@ -519,7 +519,7 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Rplot04.png}
-        \caption{Proporcion de cobertura y longitud promedio de los intervalos para $\sigma$ de la distribucion uniforme}
+        \caption{Proporci\'{o}n de cobertura y longitud promedio de los intervalos para $\sigma$ de la distribuci\'{o}n uniforme}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
@@ -527,7 +527,7 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Rplot05.png}
-        \caption{Proporcion de cobertura y longitud promedio de los intervalos para $cv$ de la distribucion uniforme}
+        \caption{Proporci\'{o}n de cobertura y longitud promedio de los intervalos para $cv$ de la distribuci\'{o}n uniforme}
         \label{fig:Densidad}
     \end{center}
 \end{figure}
