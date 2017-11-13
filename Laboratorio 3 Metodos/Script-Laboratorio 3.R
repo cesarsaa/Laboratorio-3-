@@ -270,9 +270,172 @@ porcentajeVarianza1
 longitudMedias1
 longitudVarianzas1
 
-
 #--------------- Punto 4 ---------------#
+#Intervalo de confianza 
+Ic<-function(alpha,p_proporcion,n){
+  b<-(1-(alpha/2))
+  z<-qnorm(b,mean=0,sd=1)
+  Limite_inferior<-(p_proporcion-z*sqrt(p_proporcion*(1-p_proporcion)/n))
+  Limite_superior<-(p_proporcion+z*sqrt(p_proporcion*(1-p_proporcion)/n))
+  Ic<-c(Limite_inferior,Limite_superior)
+  return(Ic)}
+
+#### Punto b
+n <- 40
+muestra <- 0
+contadorIc<-0
+
+for(j in 1:length(n)){
+  alpha<- 0.05
+  p <- 0.85
+  contadorIc[j]<-0
   
+  for (i in 1:5000){
+    muestra[i] <-rbinom (5000,n[j],0.85)
+    
+    pro_Muestra<-(muestra[i]/n[j])
+    Intervalo_confianza<- Ic(alpha,pro_Muestra, n[j])
+    if(p>= Intervalo_confianza[1] & p <= Intervalo_confianza[2])
+    {contadorIc[j]= contadorIc[j] + 1 }
+    
+  }
+  
+}
+porcentajeConta<- contadorIc/5000
+porcentajeConta
+Intervalo_confianza
+contadorIc
+
+#### Punto c #### para n=10
+n <- 10
+muestra <- 0
+contadorIc<-0
+
+for(j in 1:length(n)){
+  alpha<- 0.05
+  p <- 0.85
+  contadorIc[j]<-0
+  
+  for (i in 1:5000){
+    muestra[i] <-rbinom (5000,n[j],0.85)
+    
+    pro_Muestra<-(muestra[i]/n[j])
+    Intervalo_confianza<- Ic(alpha,pro_Muestra, n[j])
+    if(p>= Intervalo_confianza[1] & p <= Intervalo_confianza[2])
+    {contadorIc[j]= contadorIc[j] + 1 }
+    
+  }
+  
+}
+porcentajeConta<- contadorIc/5000
+porcentajeConta
+Intervalo_confianza
+contadorIc
+
+#### para n=20
+n <- 20
+muestra <- 0
+contadorIc<-0
+
+for(j in 1:length(n)){
+  alpha<- 0.05
+  p <- 0.85
+  contadorIc[j]<-0
+  
+  for (i in 1:5000){
+    muestra[i] <-rbinom (5000,n[j],0.85)
+    
+    pro_Muestra<-(muestra[i]/n[j])
+    Intervalo_confianza<- Ic(alpha,pro_Muestra, n[j])
+    if(p>= Intervalo_confianza[1] & p <= Intervalo_confianza[2])
+    {contadorIc[j]= contadorIc[j] + 1 }
+    
+  }
+  
+}
+porcentajeConta<- contadorIc/5000
+porcentajeConta
+Intervalo_confianza
+contadorIc
+
+#### para n=30
+n <- 30
+muestra <- 0
+contadorIc<-0
+
+for(j in 1:length(n)){
+  alpha<- 0.05
+  p <- 0.85
+  contadorIc[j]<-0
+  
+  for (i in 1:5000){
+    muestra[i] <-rbinom (5000,n[j],0.85)
+    
+    pro_Muestra<-(muestra[i]/n[j])
+    Intervalo_confianza<- Ic(alpha,pro_Muestra, n[j])
+    if(p>= Intervalo_confianza[1] & p <= Intervalo_confianza[2])
+    {contadorIc[j]= contadorIc[j] + 1 }
+    
+  }
+  
+}
+porcentajeConta<- contadorIc/5000
+porcentajeConta
+Intervalo_confianza
+contadorIc
+
+#### para n=50
+n <- 50
+muestra <- 0
+contadorIc<-0
+
+for(j in 1:length(n)){
+  alpha<- 0.05
+  p <- 0.85
+  contadorIc[j]<-0
+  
+  for (i in 1:5000){
+    muestra[i] <-rbinom (5000,n[j],0.85)
+    
+    pro_Muestra<-(muestra[i]/n[j])
+    Intervalo_confianza<- Ic(alpha,pro_Muestra, n[j])
+    if(p>= Intervalo_confianza[1] & p <= Intervalo_confianza[2])
+    {contadorIc[j]= contadorIc[j] + 1 }
+    
+  }
+  
+}
+porcentajeConta<- contadorIc/5000
+porcentajeConta
+Intervalo_confianza
+contadorIc
+
+#### para n=100
+n <- 100
+muestra <- 0
+contadorIc<-0
+
+for(j in 1:length(n)){
+  alpha<- 0.05
+  p <- 0.85
+  contadorIc[j]<-0
+  
+  for (i in 1:5000){
+    muestra[i] <-rbinom (5000,n[j],0.85)
+    
+    pro_Muestra<-(muestra[i]/n[j])
+    Intervalo_confianza<- Ic(alpha,pro_Muestra, n[j])
+    if(p>= Intervalo_confianza[1] & p <= Intervalo_confianza[2])
+    {contadorIc[j]= contadorIc[j] + 1 }
+    
+  }
+  
+}
+porcentajeConta<- contadorIc/5000
+porcentajeConta
+Intervalo_confianza
+contadorIc
+
 #--------------- Punto 5 ---------------#
 x1 <- c(11.23,14.36,8.33,10.5,23.42,9.15,13.47,6.47,12.4,19.38)
 x2 <- c(11.27,14.41,8.35,10.52,23.41,9.17,13.52,6.46,12.45,19.35)
