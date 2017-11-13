@@ -294,6 +294,9 @@ alpha <- 1-coefi
 ic1 <- ((media2)-(media1)) - qt((1-(alpha)/2),18)*sp*sqrt((1/n1)+(1/n2))
 ic2 <- ((media2)-(media1)) + qt((1-(alpha)/2),18)*sp*sqrt((1/n1)+(1/n2))
 
+intervalo <- c(ic1,ic2) 
+print(intervalo)
+ 
 #--------------- Punto 7 ---------------#
 ################   Parametros de las distribuciones #######################
 
