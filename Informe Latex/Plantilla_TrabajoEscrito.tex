@@ -286,7 +286,7 @@
 
 \pagebreak\section{Situaci\'{o}n 4}
 ~\\ Dada una muestra de tama\~{n}o n de una poblaci\'{o}n con una proporci\'{o}n p (desconocida) y
-la proporci\'{o}n de muestra estimada  $\hat{p}$(conocida).
+la proporci\'{o}n de muestra estimada  $\hat{p}$ (conocida).
 
 \subsection{Punto a.}
 
@@ -295,9 +295,47 @@ la proporci\'{o}n de muestra estimada  $\hat{p}$(conocida).
 ~\\ $IC(P)_{(1-\alpha)\%}=\left[\hat{P}-Z_{1-\frac{\alpha}{2}}\sqrt{\frac{\hat{P}(1-\hat{P}}{n}};\hat{P}+Z_{1-\frac{\alpha}{2}}\sqrt{\frac{\hat{P}(1-\hat{P}}{n}}\right]$
 
 
-
 \subsection{Punto b.}
+
+~\\Se genera 5000 muestras de tama\~{n}o 40 de una distribuci\'{o}n binomial con una proporci\'{o}n de 0.85 y un intervalo de confi 
+anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados:
+
+
+~\\El intervalo de confianza para:
+~\\ n=40, $\hat{P}=0.85$, con un nivel de confianza del $95\%$ es de: $[0.8070307 ;0.9929693 ]$
+~\\ De las 5000 simulaciones , 4689 contienen la verdadera proporci\'{o}n de poblaci\'{o}n P(0.85), teniendo entonces una cobertura del $93.78\%$
+
+~\\De lo que se puede decir del intervalo es que al tener una longitud angosta lo hace mas preciso pues de esta forma no tendra tanta variabilidad lo que colleva a tener un porcentaje de cobertura bastante alto
+
+
 \subsection{Punto c.}
+
+~\\El intervalo de confianza para: n=10,20,30,50,100, se podran visualizar los resultados en la siguiente tabla, la cual contiene el tama\~{n}o de n,el intervalo de confianza, la longitud del intervalo, el contador que hace referencia al numero de veces en que de las 5000 simulaciones contienen la verdadera proporci\'{o}n de poblaci\'{o}n P(es decir con p=0.85),por ultimo la tabla contiene el porcentaje de cobertura del intervalo de confianza.
+
+
+~\\ \begin{center}
+ \begin{tabular}{|c|c|c|c|c|}
+\hline 
+\rule[-1ex]{0pt}{2.5ex} n & Intervalo & Longitud del Intervalo & Contador & Porcentaje \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} n=10 & [0.7140-1.0859] & 0.3719 & 3917 & 78.34 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} n=20 & [0.4991-0.9008] & 0.4017 & 4063 & 81.26 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} n=30 & [0.6153-0.9180] & 0.3027 & 4693 & 93.86 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} n=50 & [0.6416-0.8783] & 0.2364 & 4703 & 94.06 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} n=100 & [0.8163-0.9436] & 0.1273 & 4632 & 92.64 \\ 
+\hline 
+
+\end{tabular} 
+\end{center}
+
+
+~\\ Haciendo la variaci\'{o}n en el n se puede concluir que a medida que este se va volviendo m\'{a}s grande el intervalo de confianza se va acotando, es decir, que este se va volviendo m\'{a}s angosto, lo que significa que se hace mas preciso, ya que no hay tanta variabilidad en los intervalos, dando asi porcentajes de cobertura bastante altos
+
+
 
 \pagebreak\section{Situaci\'{o}n 5}
 ~\\ Como las muestras de las b\'{a}sculas estan relacionadas, ya que una de ellas tiene sus medidas certificadas mientras que la otra se deben verificar. Entonces para encontrar un intervalo de confianza   debemos usar la estimaci\'{o}n para la diferencia de medias para muestras relacionadas.
