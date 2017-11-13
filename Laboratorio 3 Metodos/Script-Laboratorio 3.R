@@ -227,57 +227,49 @@ for(i in 1:100) {
 
 #-------------------------------------------------------------#
 # Para una Exponencial
-B <- 5000 ## n??mero de experimentos
-n <- 100 ## tama??o de muestra
-mu <- 5
-sd <- 25
-coeficiente <- 0.95
-alpha <- 1-coeficiente  
-
-muestras <- replicate(B, rexp(n,1/5))
-
-
-calcula.el.intervalo <- function(columna) {
+n1=c(10,30,50,100)
+lim_inf1<- 0
+lim_sup1<- 0
+lim_inf_V1 <- 0
+lim_sup_V1<-0
+contadorMedia1<- 0
+contadorVarianza1<-0
+longitudMedias1<-0
+longitudVarianzas1<-0
+for(j in 1:length(n1)){
+  alpha1<- 0.05
+  varianza1 <- 1
+  media1<- 5
+  medias1<-0
+  varianzas1 <- 25
+  contadorMedia1[j]<- 0
+  contadorVarianza1[j]<-0
   
-  m <- muestras[, columna]
-  
-  lim.inf <- mean(m) - qt(alpha/2,n-1)*sqrt(var(m))/sqrt(n)    
-  lim.sup <- mean(m) + qt(alpha/2,n-1)*sqrt(var(m))/sqrt(n)
-  
-  c(lim.inf, lim.sup)
-}
-
-#---C??lculo de los nuevos intervalos---#
-c=0
-mis.intervalos <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
-
-for(i in 1:5000) {
-  mis.intervalos[,i] <- calcula.el.intervalo(i)
-  if (mis.intervalos[1, i] <= mu && mis.intervalos[2, i] >= mu){
-    c= c+1
+  for (i in 1:5000){
+    
+    muestra1 <- rexp (n1[j], rate=5)
+    medias1[i]<- mean(muestra1)
+    varianzas1[i] <- var(muestra1)
+    cuantil1<- qt((1-(alpha1)/2),n1[j]-1)
+    lim_inf1[j]<-  medias1[i] - cuantil1 * sqrt(varianzas1[i]) / sqrt(n1[j])
+    lim_sup1[j]<- medias1[i] + cuantil1 *  sqrt(varianzas1[i]) / sqrt(n1[j])
+    if(media1>=lim_inf1[j] & media1 <=lim_sup1[j])
+    { contadorMedia1[j] = contadorMedia1[j] + 1 } 
+    longitudMedias1[j] <- mean(lim_sup1[j]-lim_inf1[j])
+    lim_inf_V1[j] <- (n1[j] - 1) * varianzas1[i] / qchisq(1 - alpha1 / 2,n1[j] - 1)
+    lim_sup_V1[j] <- (n1[j] - 1) * varianzas1[i] / qchisq(alpha1 / 2,n1[j] - 1)
+    if(varianza1>= lim_inf_V1[j] & varianza1 <= lim_sup_V1[j])
+    {contadorVarianza1[j]= contadorVarianza1[j] + 1  }
+    longitudVarianzas1[j]<- mean(lim_sup_V1[j]-lim_inf_V1[j])
   }
-  else{
-    c=c
-  }
 }
+porcentajeMedias1 <-  contadorMedia1/5000
+porcentajeVarianza1<-   contadorVarianza1/5000
+porcentajeMedias1
+porcentajeVarianza1
+longitudMedias1
+longitudVarianzas1
 
-Porcentaje <- c/5000 #Proporcion de intervalos que atrapan al parametro
-
-longitud <- numeric(length = B)
-for (i in 1:B){
-  longitud[i]=(mis.intervalos[2,i]-mis.intervalos[1,i])
-  longitudpro=sum(longitud)/B
-}
-
-tabla_cs<-c(n1,n2,n3,n4)
-tablaexp <-c(0,0,0,0)
-
-### Graficos ###
-plot(tabla_cs, tablaexp, type="b", main="Porcentaje de cubrimiento observado para la Media", 
-     sub="Distribucion Exponencial para n=10, 30, 50, 100", xlab="n", ylab="porcentaje")
-
-plot(tabla_cs, tablaexp, type="b", main="Porcentaje de cubrimiento observado para la varianza", 
-     sub="Distribucion Exponencial para n=10, 30, 50, 100", xlab="n", ylab="Longitud")
 
 #--------------- Punto 4 ---------------#
   
