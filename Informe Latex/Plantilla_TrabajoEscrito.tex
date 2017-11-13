@@ -178,6 +178,18 @@
 \pagebreak\subsection{Punto b.}
 ~\\ Para este punto se simulo una poblacion exponencial con parametro $\lambda=\frac{1}{5}$ y de alli, se extrayeron las respectivas muestras de los distintos tama\~{n}os.
 ~\\ \textbf{PARA LA MEDIA:}
+~\\ Utilizamos la siguiente tabla para ver mas facilmente la comparacion por tama\~{n}os de muestra, de la proporcion de intervalos que atrapan la verdadera media y de la longitud promedio de los intervalos para la poblacion exponencial.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+\rule[-1ex]{0pt}{2.5ex}  & n=10 & n=30 & n=50 & n=100 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Porcentaje de cubrimiento & 0 & 0 & 0 & 0 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Longitud promedio del intervalo & 0.2792 & 0.1531 & 0.0869 & 0.0893 \\ 
+\hline 
+\end{tabular} 
+\end{center}
 ~\\\textbf{Representacion grafica del porcentaje de cubrimiento esperado de los intervalos para la media de una poblacion exponencial:}
 ~\\ \begin{figure}[!h]
     \begin{center}
@@ -188,7 +200,29 @@
 \end{figure}
 ~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento son del $0\%$, al contrario que en la poblacion normal, en la cual todos los intervalos estan cerca del $95\%$. Esto se debe a que la estimacion por intervalos que estamos aplicando, solo se utiliza cuando la poblacion es normal. Es decir, estas formulas no sirven para estimar $\mu$ de una poblacion no normal. Como se ve en la imagen, nos arroja intervalos que no tienen ningun sentido con la poblacion que estamos trabajando (en este caso, la exponencial) y que no atrapan el verdadero valor de $\mu$.
 
+\pagebreak\textbf{Representacion grafica de la longitud de los intervalos para la media de una poblacion exponencial:}
+~\\ \begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/P1bM.png}
+        \caption{Grafica de la longitud de los intervalos para $\mu$ por cada tama\~{n}o de muestra, para la poblaci\'{o}n exponencial}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En esta imagen podemos ver que las longitudes de los intervalos, son muy peque\~{n}as (la maxima es de aproximadamente 0.25), lo cual nos indica que esos intervalos probablemente no tengan una alta confianza, ya que la probabilidad de que no encierren la verdadera media es muy alta. Ademas vemos que a medida que aumentan los tama\~{n}os de muestra, disminuye aun mas la longitud del intervalo, tendiendo casi a 0, volviendose asi, un estimador practicamente puntual, el cual por obvias razones no va a contener el verdadero valor del parametro. 
+
 \pagebreak\textbf{PARA LA VARIANZA:}
+~\\ Utilizamos la siguiente tabla para ver mas facilmente la comparacion por tama\~{n}os de muestra, de la proporcion de intervalos que atrapan la verdadera varianza y de la longitud promedio de los intervalos para la poblacion exponencial.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+\rule[-1ex]{0pt}{2.5ex}  & n=10 & n=30 & n=50 & n=100 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Porcentaje de cubrimiento & 0 & 0 & 0 & 0 \\ 
+\hline 
+\rule[-1ex]{0pt}{2.5ex} Longitud promedio del intervalo & 0.1089 & 0.0492 & 0.0200 & 0.0293 \\ 
+\hline 
+\end{tabular} 
+\end{center}
 ~\\\textbf{Representacion grafica del porcentaje de cubrimiento esperado de los intervalos para la varianza de una poblacion exponencial:}
 ~\\ \begin{figure}[!h]
     \begin{center}
@@ -199,6 +233,19 @@
 \end{figure}
 ~\\ En esta imagen podemos ver que todos los porcentajes de cubrimiento son del $0\%$, al contrario que en la poblacion normal, en la cual todos los intervalos estan cerca del $95\%$. Esto se debe a que la estimacion por intervalos que estamos aplicando, solo se utiliza cuando la poblacion es normal. Es decir, estas formulas no sirven para estimar $\sigma^2$ de una poblacion no normal. Como se ve en la imagen, nos arroja intervalos que no tienen ningun sentido con la poblacion que estamos trabajando (en este caso, la exponencial) y que no atrapan el verdadero valor de $\sigma^2$.
 
+\pagebreak\textbf{Representacion grafica de la longitud de los intervalos para la varianza de una poblacion exponencial:}
+~\\ \begin{figure}[!h]
+    \begin{center}
+        \includegraphics[width=10cm]{Figuras/P1bV.png}
+        \caption{Grafica de la longitud de los intervalos para $\sigma^2$ por cada tama\~{n}o de muestra, para la poblaci\'{o}n exponencial}
+        \label{fig:Densidad}
+    \end{center}
+\end{figure}
+~\\ En esta grafica, al igual que en la de para la media, vemos que las longitudes son tambien muy peque\~{n}as. y Al igual que en todas las graficas, la longitud de los intervalos tiene una correlacion lineal negativo con los tama\~{n}os de muestra. Mientras mas grande sea el tama\~{n}o de muestra la longitud tiene a cero (en este caso).
+
+~\\\textbf{CONCLUSION GENERAL:}
+~\\ Comparando los resultados para la poblacion normal y la exponencial, podemos ver que los intervalos son eficientes y funcionales solo para los datos que provienen de una poblacion normal, ya que nos da porcentajes de cubrimiento cerca del nivel de confianza asignado. En cambio, los intervalos calculados para los datos que provienen de una poblacion exponencial tienen un porcentaje de cubrimiento de 0 para cada uno de los tama\~{n}os de muestra, y para los dos parametros ($\mu$ y $\sigma^2$).
+Entonces concluimos que las formulas que tenemos para este tipo de estimacion, solo funcionan para datos que son provenientes de una poblacion normal, ya que si lo aplicamos a datos muestreados de poblaciones diferentes, nos arroja intervalos que no tienen ningun sentido, y que no nos sirven en realidad como estimacion de los parametros.
 \pagebreak\section{Situaci\'{o}n 2}
 ~\\ Para darnos cuenta que en realidad la mayoria de personas aprueba el proyecto de fluoracion del agua, debemos encontrar un intervalo de confianza de la proporcion de personas que estan a favor, y ver si este esta por encima del 0.5.
 ~\\ Entonces. Tomando los datos del enunciado tenemos:
