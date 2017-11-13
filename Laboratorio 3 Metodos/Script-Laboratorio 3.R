@@ -224,7 +224,172 @@ for(i in 1:100) {
   segments(mis.intervalos4[1,i], i, mis.intervalos4[2,i], i,
            col = ifelse(mis.intervalos4[1, i] < mu & mis.intervalos4[2, i] > mu, "gray", "red"))  
 }
+#-------------------------------------------------------------#
+### Para la Varianza ###
 
+B <- 5000 ## número de experimentos
+coeficiente<- 0.95
+alpha <- 1-coeficiente
+
+#---Para n=10---#
+n1 <- 10 ## tamaño de muestra
+
+muestras1 <- replicate(B, rnorm(n1, 5, 1))
+
+calcula.el.intervalo1 <- function(columna) {
+  
+  m1 <- muestras1[, columna]
+  
+  lim.inf1 <- (n1-1)*(var(m1)) / qchisq(1-alpha/2,n1-1)
+  lim.sup1 <- (n1-1)*(var(m1)) / qchisq(alpha/2,n1-1)
+  
+  c(lim.inf1, lim.sup1)
+}
+
+#Cálculo de los nuevos intervalos#
+c1=0
+mis.intervalos1 <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
+
+for(i in 1:5000) {
+  mis.intervalos1[,i] <- calcula.el.intervalo1(i)
+  if (mis.intervalos1[1, i] <= 1 && mis.intervalos1[2, i] >= 1){
+    c1= c1+1
+  }
+  else{
+    c1=c1
+  }
+}
+
+Porcentaje1 <- c1/5000 #Proporcion de intervalos que atrapan al parametro
+
+longitud1 <- numeric(length = B)
+for (i in 1:B){
+  longitud1[i]=(mis.intervalos1[2,i]-mis.intervalos1[1,i])
+  longitudpro1=sum(longitud1)/B
+}
+
+#---Para n=30---#
+n2 <- 30 ## tamaño de muestra
+
+muestras2 <- replicate(B, rnorm(n2, 5, 1))
+
+calcula.el.intervalo2 <- function(columna) {
+  
+  m2 <- muestras2[, columna]
+  
+  lim.inf2 <- (n2-1)*(var(m2)) / qchisq(1-alpha/2,n2-1)
+  lim.sup2 <- (n2-1)*(var(m2)) / qchisq(alpha/2,n2-1)
+  
+  c(lim.inf2, lim.sup2)
+}
+
+#Cálculo de los nuevos intervalos#
+c2=0
+mis.intervalos2 <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
+
+for(i in 1:5000) {
+  mis.intervalos2[,i] <- calcula.el.intervalo2(i)
+  if (mis.intervalos2[1, i] <= 1 && mis.intervalos2[2, i] >= 1){
+    c2= c2+1
+  }
+  else{
+    c2=c2
+  }
+}
+
+Porcentaje2 <- c2/5000 #Proporcion de intervalos que atrapan al parametro
+
+longitud2 <- numeric(length = B)
+for (i in 1:B){
+  longitud2[i]=(mis.intervalos2[2,i]-mis.intervalos2[1,i])
+  longitudpro2=sum(longitud2)/B
+}
+
+#---Para n=50---#
+n3 <- 50 ## tamaño de muestra
+
+
+muestras3 <- replicate(B, rnorm(n3, 5, 1))
+
+calcula.el.intervalo3 <- function(columna) {
+  
+  m3 <- muestras3[, columna]
+  
+  lim.inf3 <- (n3-1)*(var(m3)) / qchisq(1-alpha/2,n3-1)
+  lim.sup3 <- (n3-1)*(var(m3)) / qchisq(alpha/2,n3-1)
+  
+  c(lim.inf3, lim.sup3)
+}
+
+#Cálculo de los nuevos intervalos#
+c3=0
+mis.intervalos3 <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
+
+for(i in 1:5000) {
+  mis.intervalos3[,i] <- calcula.el.intervalo3(i)
+  if (mis.intervalos3[1, i] <= 1 && mis.intervalos3[2, i] >= 1){
+    c3= c3+1
+  }
+  else{
+    c3=c3
+  }
+}
+
+Porcentaje3 <- c3/5000 #Proporcion de intervalos que atrapan al parametro
+
+longitud3 <- numeric(length = B)
+for (i in 1:B){
+  longitud3[i]=(mis.intervalos3[2,i]-mis.intervalos3[1,i])
+  longitudpro3=sum(longitud3)/B
+}
+
+#---Para n=100---#
+n4 <- 100 ## tamaño de muestra
+
+muestras4 <- replicate(B, rnorm(n4, 5, 1))
+
+calcula.el.intervalo4 <- function(columna) {
+  
+  m4 <- muestras4[, columna]
+  
+  lim.inf4 <- (n4-1)*(var(m4)) / qchisq(1-alpha/2,n4-1)
+  lim.sup4 <- (n4-1)*(var(m4)) / qchisq(alpha/2,n4-1)
+  
+  c(lim.inf4, lim.sup4)
+}
+
+#Cálculo de los nuevos intervalos#
+c4=0
+mis.intervalos4 <- matrix(rep(0, 10000), nrow = 2) ## matriz de ceros
+
+for(i in 1:5000) {
+  mis.intervalos4[,i] <- calcula.el.intervalo4(i)
+  if (mis.intervalos4[1, i] <= 1 && mis.intervalos4[2, i] >= 1){
+    c4= c4+1
+  }
+  else{
+    c4=c4
+  }
+}
+
+Porcentaje4 <- c4/5000 #Proporcion de intervalos que atrapan al parametro
+
+longitud4 <- numeric(length = B)
+for (i in 1:B){
+  longitud4[i]=(mis.intervalos4[2,i]-mis.intervalos4[1,i])
+  longitudpro4=sum(longitud4)/B
+}
+
+tabla_cv<-c(Porcentaje1,Porcentaje2,Porcentaje3,Porcentaje4)
+tabla_sd<-c(longitudpro1,longitudpro2,longitudpro3,longitudpro4)
+tabla_cs<-c(n1,n2,n3,n4)
+
+### Graficos ###
+plot(tabla_cs, tabla_cv, type="b", main="Porcentaje cubrimiento de la varianza para n=10, 30, 50, 100", 
+     xlab="tamaño de la muestra", ylab="porcentaje")
+plot(tabla_cs, tabla_sd, type="b", main="Longitud de la varianza para n=10, 30, 50, 100", 
+     xlab="tamaño de la muestra", ylab="Longitud")
+ 
 #-------------------------------------------------------------#
 # Para una Exponencial
 n1=c(10,30,50,100)
@@ -270,9 +435,172 @@ porcentajeVarianza1
 longitudMedias1
 longitudVarianzas1
 
-
 #--------------- Punto 4 ---------------#
+#Intervalo de confianza 
+Ic<-function(alpha,p_proporcion,n){
+  b<-(1-(alpha/2))
+  z<-qnorm(b,mean=0,sd=1)
+  Limite_inferior<-(p_proporcion-z*sqrt(p_proporcion*(1-p_proporcion)/n))
+  Limite_superior<-(p_proporcion+z*sqrt(p_proporcion*(1-p_proporcion)/n))
+  Ic<-c(Limite_inferior,Limite_superior)
+  return(Ic)}
+
+#### Punto b
+n <- 40
+muestra <- 0
+contadorIc<-0
+
+for(j in 1:length(n)){
+  alpha<- 0.05
+  p <- 0.85
+  contadorIc[j]<-0
   
+  for (i in 1:5000){
+    muestra[i] <-rbinom (5000,n[j],0.85)
+    
+    pro_Muestra<-(muestra[i]/n[j])
+    Intervalo_confianza<- Ic(alpha,pro_Muestra, n[j])
+    if(p>= Intervalo_confianza[1] & p <= Intervalo_confianza[2])
+    {contadorIc[j]= contadorIc[j] + 1 }
+    
+  }
+  
+}
+porcentajeConta<- contadorIc/5000
+porcentajeConta
+Intervalo_confianza
+contadorIc
+
+#### Punto c #### para n=10
+n <- 10
+muestra <- 0
+contadorIc<-0
+
+for(j in 1:length(n)){
+  alpha<- 0.05
+  p <- 0.85
+  contadorIc[j]<-0
+  
+  for (i in 1:5000){
+    muestra[i] <-rbinom (5000,n[j],0.85)
+    
+    pro_Muestra<-(muestra[i]/n[j])
+    Intervalo_confianza<- Ic(alpha,pro_Muestra, n[j])
+    if(p>= Intervalo_confianza[1] & p <= Intervalo_confianza[2])
+    {contadorIc[j]= contadorIc[j] + 1 }
+    
+  }
+  
+}
+porcentajeConta<- contadorIc/5000
+porcentajeConta
+Intervalo_confianza
+contadorIc
+
+#### para n=20
+n <- 20
+muestra <- 0
+contadorIc<-0
+
+for(j in 1:length(n)){
+  alpha<- 0.05
+  p <- 0.85
+  contadorIc[j]<-0
+  
+  for (i in 1:5000){
+    muestra[i] <-rbinom (5000,n[j],0.85)
+    
+    pro_Muestra<-(muestra[i]/n[j])
+    Intervalo_confianza<- Ic(alpha,pro_Muestra, n[j])
+    if(p>= Intervalo_confianza[1] & p <= Intervalo_confianza[2])
+    {contadorIc[j]= contadorIc[j] + 1 }
+    
+  }
+  
+}
+porcentajeConta<- contadorIc/5000
+porcentajeConta
+Intervalo_confianza
+contadorIc
+
+#### para n=30
+n <- 30
+muestra <- 0
+contadorIc<-0
+
+for(j in 1:length(n)){
+  alpha<- 0.05
+  p <- 0.85
+  contadorIc[j]<-0
+  
+  for (i in 1:5000){
+    muestra[i] <-rbinom (5000,n[j],0.85)
+    
+    pro_Muestra<-(muestra[i]/n[j])
+    Intervalo_confianza<- Ic(alpha,pro_Muestra, n[j])
+    if(p>= Intervalo_confianza[1] & p <= Intervalo_confianza[2])
+    {contadorIc[j]= contadorIc[j] + 1 }
+    
+  }
+  
+}
+porcentajeConta<- contadorIc/5000
+porcentajeConta
+Intervalo_confianza
+contadorIc
+
+#### para n=50
+n <- 50
+muestra <- 0
+contadorIc<-0
+
+for(j in 1:length(n)){
+  alpha<- 0.05
+  p <- 0.85
+  contadorIc[j]<-0
+  
+  for (i in 1:5000){
+    muestra[i] <-rbinom (5000,n[j],0.85)
+    
+    pro_Muestra<-(muestra[i]/n[j])
+    Intervalo_confianza<- Ic(alpha,pro_Muestra, n[j])
+    if(p>= Intervalo_confianza[1] & p <= Intervalo_confianza[2])
+    {contadorIc[j]= contadorIc[j] + 1 }
+    
+  }
+  
+}
+porcentajeConta<- contadorIc/5000
+porcentajeConta
+Intervalo_confianza
+contadorIc
+
+#### para n=100
+n <- 100
+muestra <- 0
+contadorIc<-0
+
+for(j in 1:length(n)){
+  alpha<- 0.05
+  p <- 0.85
+  contadorIc[j]<-0
+  
+  for (i in 1:5000){
+    muestra[i] <-rbinom (5000,n[j],0.85)
+    
+    pro_Muestra<-(muestra[i]/n[j])
+    Intervalo_confianza<- Ic(alpha,pro_Muestra, n[j])
+    if(p>= Intervalo_confianza[1] & p <= Intervalo_confianza[2])
+    {contadorIc[j]= contadorIc[j] + 1 }
+    
+  }
+  
+}
+porcentajeConta<- contadorIc/5000
+porcentajeConta
+Intervalo_confianza
+contadorIc
+
 #--------------- Punto 5 ---------------#
 x1 <- c(11.23,14.36,8.33,10.5,23.42,9.15,13.47,6.47,12.4,19.38)
 x2 <- c(11.27,14.41,8.35,10.52,23.41,9.17,13.52,6.46,12.45,19.35)
