@@ -411,13 +411,14 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 ~\\$S^2{x}_{1}=26.687$ y $S^2{x}_{2}=26.593$\\
 ~\\$S{x}_{1}=5.166$ y $S{x}_{2}=5.156$\\
 ~\\ $1-\alpha=0.98$ ,  $\alpha= 0.02$\\
+~\\ $Sp=\sqrt{\frac{(n_{1}-1)S_{1}^2+(n_{2}-1)S_{2}^2}{n_{1}+n_{2}-2}}= 5.16$
 
 ~\\ Ahora, reemplazando en la formula para hallar el intervalo de confianza, nos queda:
 ~\\ $IC(\mu_{1}-\mu_{2} )_{(1-\alpha)\%}=( 12.871 - 12.891) \pm t_{(18 ;0.99)}(5.16)\sqrt{\frac{1}{10}+\frac{1}{10}}$ \\
 ~\\ $IC(\mu_{D})_{98\%}=[-0.02 \pm 2.552 (5.16) \frac{1}{\sqrt{5}}]$
 ~\\ $IC(\mu_{D})_{98\%}=[-5.91 ; 5.87 ]$
 
-~\\ Con un nivel de confianza del $98\%$ se puede decir que la bascula 1 con respecto a la bascula 2 obtiene un buen rendimiento 
+~\\ Podemos ver, que el intervalo obtenido contiene al cero, y de hecho, el cero es casi el centro del intervalo, lo que nos indica que con un $98\%$ la diferencia entre las medias reales de cada una de las basculas puede ser cero o en simbolos $\mu_{B1}=\mu_{B2}$. Por lo cual, concluimos que la bascula 1 (B1) esta en buen estado y bien calibrada, ya que comparandola con la bascula certificada (B2) la diferencia entrelas medias cae en un intervalo que contien al cero.   
 
 
 \pagebreak\section{Situaci\'{o}n 6}
@@ -484,6 +485,10 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
 ~\\ 2. $Gamma(\alpha=0.5,\beta=100)$
 ~\\ 3. $Uniforme(a=200,b=600)$
 
+\section*{Distribuciones a Evaluar}
+Partiendo de los resultados obtenidos es importante mencionar que el desempe\^{n}o de los estimadores para cada una de las distribuciones propuestas, estimadores que se presentaran de forma gr\'{a}fica para as\'{i} dar una mejor comprensi\'{o}n del comportamiento de los estimadores propuestos para las distribuciones Normal, Gamma y Uniforme con par\'{a}metros iguales para poder que la comparaci\'{o}n de estimadores sea la apropiada.  
+
+\pagebreak
 \begin{figure}[!h]
     \begin{center}
         \includegraphics[width=10cm]{Figuras/Rplot.png}
@@ -531,6 +536,19 @@ anza del $95\%$ de la proporci\'{o}n de la cual arroja los siguientes resultados
         \label{fig:Densidad}
     \end{center}
 \end{figure}
+
+\pagebreak
+\subsection{Distribuci\'{o}n Normal}
+Para la distribu\'{o}n normal se puede observar como el estimador 2 es el que mejor rendimiento ofrece ya que es el que tiene mayor cobertura en la proporci\'{o}n de los datos, y como a su vez es el que mejor longitud de intervalo tiene en comparaci\'{o}n al estimador 1 y 3.
+
+\subsection{Distribuci\'{o}n  Gamma}
+Para la Distribuci\'{o}n  Gamma se observa como el estimador 2 es el que mejor resultados puede ofrecer por encontrarse justo dentro del nivel de confianza requerido, a diferencia de los estimadores 1 y 3, donde tenemos que el estimador 1 queda muy por debajo del nivel de confianza planteado por lo cual se descarta por no atrapar los suficientes datos o como sucede en el estimador 3 que queda por encima sobreestimando al parametro.
+
+\subsection{Distribuci\'{o}n  Uniforme}
+Para la Distribuci\'{o}n  Uniforme se pude observar como el estimador 2 arroja una longitud de intervalo mas acotado a comparaci\'{o}n de los otros estimadores, de lo que se puede decir que es mas preciso ya que no tienen tanta variabilidad 
+
+\section*{Conclusi\'{o}n}
+Para las distribuciones en general, se observa como el estimador 2 es el que tiene mejor cobertura para los intervalos del coeficiente de variaci\'{o}n y de la desviaci\'{o}n est\'{a}ndar puesto que este se encuentra justo en un nivel de confianza optimo para atrapar los datos tanto para el porcentaje de cobertura como para la longitud promedio de intervalo a diferencia de los estimadores 1 y 3 de los cuales se podr\'{i}a catalogar como el de menor rendimiento al estimador 3, puesto que este es el que menor cobertura tiene y el que mayor longitud promedio muestra.  
 
 \bibliography{Bibliografia}
 \end{document}
