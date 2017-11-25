@@ -16,3 +16,6 @@
 \contentsline {subsection}{\numberline {6.1}Punto a.}{20}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Punto b.}{21}{subsection.6.2}
 \contentsline {section}{\numberline {7}Situaci\'{o}n 7}{23}{section.7}
+\contentsline {subsection}{\numberline {7.1}Distribuci\'{o}n Normal}{26}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}Distribuci\'{o}n Gamma}{26}{subsection.7.2}
+\contentsline {subsection}{\numberline {7.3}Distribuci\'{o}n Uniforme}{26}{subsection.7.3}
